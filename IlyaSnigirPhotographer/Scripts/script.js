@@ -1,3 +1,4 @@
+//Slider Index
 var i = 0;
 
 function Next() {
@@ -26,7 +27,24 @@ function Prev() {
 
 setInterval(Next(), 1000);
 
+//Before_After
 
+$(document).ready(function () {
+    var mouse_down = false;
+    $('#ba_box').mousemove(function (event) {
+        var leftpos = event.pageX - $("#ba_box").offset().left;
+        var rightpos = 700 - leftpos;
+        if (mouse_down && leftpos >= 0 && leftpos <= 700) {
+            console.log($("#ba_box").offset().left);
+            $('#before').css('width', leftpos);
+            $('#after').css('width', rightpos);
+            $('#ba_cursor').css('left', leftpos - 10);
+        }
+    });
+    $("#ba_cursor").mousedown(function () { mouse_down = true; });
+    $(document).mouseup(function () { mouse_down = false; });
+}
+)
 
 /*$(window).on('scroll', function(){
 	if($(window).scrollTop()) {

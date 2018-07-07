@@ -355,6 +355,8 @@
     <Content Include="Views\Admin\Test.cshtml" />
     <Content Include="Views\Admin\DeletePhoto.cshtml" />
     <Content Include="Views\Shared\_PhotoLayout.cshtml" />
+    <Content Include="Views\Home\Before_After.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
