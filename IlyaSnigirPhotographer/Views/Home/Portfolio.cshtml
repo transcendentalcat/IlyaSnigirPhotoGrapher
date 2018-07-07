@@ -1,0 +1,41 @@
+﻿@model IEnumerable<IlyaSnigirPhotographer.Models.Album>
+
+@{
+    /**/
+
+    ViewBag.Title = "Portfolio";
+    Layout = "~/Views/Shared/_PhotoLayout.cshtml";
+}
+
+
+<h1 class="album-title"> Альбомы</h1>
+
+@*for (int j = 0; j < Model.Count(); j += 2)
+    {
+        <div class="gallery_item">
+            @Html.Raw("<div style=\"background-image: url(\"data:image/jpeg;base64,"
+                                                   + Convert.ToBase64String(Model.ElementAt(j).Photos.FirstOrDefault().PhotoFile) + "\" class=\"gallery_album\">")
+            <div class="shadow"><div class="name"><a href="/Home/Photo/@(j+1)">@Model.ElementAt(j).Title</a></div></div>
+
+        </div>
+        if ((j + 1) < Model.Count())
+        {
+            @Html.Raw("<div style=\"background-image: url(\"data:image/jpeg;base64,"
+                                                + Convert.ToBase64String(Model.ElementAt(j + 1).Photos.FirstOrDefault().PhotoFile) + "\" class=\"gallery_album\">")
+            <div class="shadow"><div class="name"><a href="/Home/Photo/@(j + 2)">@Model.ElementAt(j + 1).Title</a></div></div>
+
+            @Html.Raw("</div>")
+        }
+        @Html.Raw("</div>")
+    }*@
+
+<div class="gallery_item">
+    <div style="background-image: url(" @Url.Action("GetImage", "Home", new { id = Model.FirstOrDefault().Photos.FirstOrDefault().PhotoID }) ")" class="gallery_album">
+        <div class="shadow"><div class="name"><a href="/Home/Photos/2">@Model.FirstOrDefault().Title</a></div></div>
+    </div>
+
+    <div style="background-image:url(@Url.Action("GetImage", "Home", new { id = Model.FirstOrDefault().Photos.FirstOrDefault().PhotoID }))"> sdvvvvvvvvvvvv</div>
+</div>
+
+
+

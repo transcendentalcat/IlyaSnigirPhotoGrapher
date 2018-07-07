@@ -1,0 +1,25 @@
+﻿@model IEnumerable<IlyaSnigirPhotographer.Models.Photo>
+
+@{
+    ViewBag.Title = "Photos";
+    Layout = "~/Views/Shared/_PhotoLayout.cshtml";
+}
+
+<div class="album-title">
+    <p>Альбом с фотографиями: @ViewBag.AlbTitle</p>
+</div>
+
+<div class="album">
+    @foreach (var item in Model)
+    {
+        if (item.PhotoFile != null)
+        {
+            <div class="album-item">
+                <a href="">
+                    @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(item.PhotoFile) + "\" />")
+
+                </a>
+            </div>
+        }
+    }
+</div>

@@ -38,9 +38,16 @@ namespace IlyaSnigirPhotographer.Controllers
 
         public ActionResult Portfolio()
         {
-            ViewBag.Message = "Your contact page.";
+            var albums = db.Albums;
 
-            return View();
+            return View(albums);
+        }
+
+        public ActionResult Photos(int id)
+        {
+            var photos = db.Photos.Where(p => p.AlbumID == id);
+
+            return View(photos);
         }
 
         public ActionResult BeforeAfter()

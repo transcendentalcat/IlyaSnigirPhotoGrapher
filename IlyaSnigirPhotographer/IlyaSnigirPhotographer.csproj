@@ -359,6 +359,8 @@
     <Content Include="Views\Shared\_PhotoLayout.cshtml" />
     <Content Include="Views\Home\Before_After.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Home\Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
