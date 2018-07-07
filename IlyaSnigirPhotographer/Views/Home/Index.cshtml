@@ -3,23 +3,6 @@
     Layout = "~/Views/Shared/_PhotoLayout.cshtml";
 }
 
-<script>
-    var i = 0;
-
-    setInterval(function Next() {
-        var images = document.querySelectorAll("#photo .img");
-        var oNext = document.getElementById("next");
-        images[i].classList.remove("showed");
-        i++;
-        if (i >= images.length) {
-            i = 0;
-        }
-
-        images[i].classList.add("showed");
-
-    }
-        , 8000);
-</script>
 
 <div class="slider-wrapper">
     <div id="slider" class="slider">

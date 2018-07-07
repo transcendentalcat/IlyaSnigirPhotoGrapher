@@ -1,31 +1,52 @@
 //Slider Index
-var i = 0;
 
-function Next() {
-	    var images = document.getElementsByClassName("img");
-		var oNext = document.getElementById("next");
-		images[i].classList.remove("showed");
-		i++;
-		if (i >= images.length) {
-			i = 0;
-		}
+window.onload = function () {
 
-		images[i].classList.add("showed");
+    var i = 0;
+    var images = document.getElementsByClassName("img");
 
-	}
-function Prev() {
-		var images = document.getElementsByClassName("img");
-		var oPrev = document.getElementById("prev");
-		images[i].classList.remove("showed");
-		i--;
-		if (i < 0) {
-			i = images.length - 1;
-		}
-		images[i].classList.add("showed");
+    var oNext = document.getElementById("next");
+    oNext.onclick = Next;
+    var oPrev = document.getElementById("prev");
+    oPrev.onclick = Prev;
 
-	}
+    var interval = setInterval(LeafSlider, 8000);  
 
-setInterval(Next(), 1000);
+    function Next() {
+        images[i].classList.remove("showed");
+        i++;
+        if (i >= images.length) {
+            i = 0;
+        }
+
+        images[i].classList.add("showed");
+        clearInterval(interval);
+        setTimeout(function () { interval = setInterval(LeafSlider, 8000) }, 8000);
+    }
+    function Prev() {
+        images[i].classList.remove("showed");
+        i--;
+        if (i < 0) {
+            i = images.length - 1;
+        }
+        images[i].classList.add("showed");
+        clearInterval(interval);
+        setTimeout(function () { interval = setInterval(LeafSlider, 8000) }, 8000);
+    }
+
+    function LeafSlider() {
+        images[i].classList.remove("showed");
+        i++;
+        if (i >= images.length) {
+            i = 0;
+        }
+
+        images[i].classList.add("showed");
+        
+    }
+  
+}
+
 
 //Before_After
 
