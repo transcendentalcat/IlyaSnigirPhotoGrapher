@@ -212,6 +212,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BeforeAfter\до.jpg" />
+    <Content Include="Content\BeforeAfter\после.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\IMG_794711.jpg" />

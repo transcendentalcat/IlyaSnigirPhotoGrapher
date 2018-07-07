@@ -78,17 +78,19 @@ nav.black ul li a {
 	color: #fff;
 }
 
-nav ul li {
-	padding: 14px 10px;
-	flex-basis: 25%;
+ nav ul li {
+        padding: 14px 10px;
+        flex-basis: 25%;
+        
 }
 
 nav ul li a {
-	text-decoration: none;
-	color: #000;
-	font-size: 16px;
-	padding: 6px 12px;
-	transition: .3s;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    padding: 6px 12px;
+    transition: .3s;
+    white-space: nowrap;
 }
 
 .menu-icon {
@@ -140,15 +142,17 @@ nav ul li a {
 		max-height: 20em;
 	}
 
-	nav ul li {
-		box-sizing: border-box;
-		width: 100%;
-		padding: 24px 0;
-		text-align: center;
-	}
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px 0;
+        text-align: center;
+        white-space: nowrap;
+    }
 
 	nav ul li a {
 		color: #fff;
+        white-space: nowrap;
 	}
 
 	.menu-icon {
@@ -976,7 +980,7 @@ nav ul li a:hover {
 	background-origin: border-box;
 	background-size: cover;
 	box-sizing: border-box;
-	background-image: url("до.jpg");
+	background-image: url("/Content/BeforeAfter/до.jpg");
 	background-position: left;
 }
 
@@ -988,7 +992,7 @@ nav ul li a:hover {
 	background-origin: border-box;
 	background-size: cover;
 	box-sizing: border-box;
-	background-image: url("после.jpg");
+	background-image: url("/Content/BeforeAfter/после.jpg");
 	background-position: right;
 }
 
@@ -1253,4 +1257,12 @@ nav ul li a:hover {
 
 .timeline .right .point-space {
 	border-right: 3px solid #262626;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: right;
 }
