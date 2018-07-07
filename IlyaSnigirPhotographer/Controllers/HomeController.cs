@@ -36,6 +36,27 @@ namespace IlyaSnigirPhotographer.Controllers
             return View();
         }
 
+        public ActionResult Portfolio()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult BeforeAfter()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View("Before_After");
+        }
+
+        public ActionResult Services()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
         [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage(int id)
         {
