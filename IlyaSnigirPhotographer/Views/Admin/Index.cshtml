@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Ajax.ActionLink("Альбомы", "ManageAlbums",
+                new AjaxOptions { UpdateTargetId = "admin" })
+@Ajax.ActionLink("Фотографии", "ManagePhotos",
+                new AjaxOptions { UpdateTargetId = "admin" })
+@Ajax.ActionLink("Отзывы", "ManageReviews",
+                new AjaxOptions { UpdateTargetId = "admin" })
+
+<div id="admin">
+
+</div>

@@ -1,0 +1,174 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_PhotoLayout.cshtml";
+}
+
+<script>
+    var i = 0;
+
+    setInterval(function Next() {
+        var images = document.querySelectorAll("#photo .img");
+        var oNext = document.getElementById("next");
+        images[i].classList.remove("showed");
+        i++;
+        if (i >= images.length) {
+            i = 0;
+        }
+
+        images[i].classList.add("showed");
+
+    }
+        , 8000);
+</script>
+
+<div class="slider-wrapper">
+    <div id="slider" class="slider">
+        <div id="photo">
+            <div class="img img1 showed"></div>
+            <div class="img img2"></div>
+            <div class="img img3"></div>
+            <div class="img img4"></div>
+            <div class="img img5"></div>
+            <div class="img img6"></div>
+        </div>
+        <div id="pr_button">
+            <img onclick="Prev()" id="prev" src="/Content/prev.png" alt="Back">
+        </div>
+
+        <div id="n_button">
+            <img onclick="Next()" id="next" src="/Content/next.png" alt="Next">
+        </div>
+    </div>
+</div>
+
+<div class="logotype">
+    <img class="wow fadeInUp" data-wow-duration="2s" data-wow-offset="300" src="~/Content/watermark2.png">
+</div>
+<div id="photographer_title">
+    <h1 class="wow fadeInLeft" data-wow-duration="2s" data-wow-offset="250">Илья Снигирь</h1>
+    <h3 class="wow slideInUp" data-wow-duration="2s" data-wow-offset="250">Фотограф Киев</h3>
+</div>
+<div id="photographer_info">
+    <div class="portret"><img class="wow slideInLeft" data-wow-duration="2s" data-wow-offset="200" src="~/Content/IMG_794711.jpg"></div>
+    <article>
+        <p class="wow slideInRight" data-wow-duration="2s" data-wow-offset="200"><i class="fas fa-quote-left"></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu. Etiam vehicula quam sed leo posuere, ut vehicula leo bibendum. Phasellus tempor vitae magna id ornare. Donec ac lorem ut diam convallis pharetra. Praesent aliquam nulla hendrerit dolor posuere faucibus. Pellentesque sit amet malesuada justo. Nulla ullamcorper lacinia nunc in blandit. Pellentesque ut pharetra tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    </article>
+</div>
+
+<div class="inspiration">
+    <div class="album">
+        <div class="album-item">
+            <img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/watch.jpg">
+        </div>
+        <div class="album-item quote"><p class="wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">Я вижу мир по другому, и каждый день пытаюсь найти что-то прекрасное и поделиться этим с другими</p></div>
+        <div class="album-item">
+            <img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/forest1.jpg">
+        </div>
+        <div class="album-item">
+            <img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/rain.jpg">
+        </div>
+        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/forest2.jpg"></div>
+        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/фонарик.jpg"></div>
+        <div class="album-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/car.jpg"></div>
+        <div class="album-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="2.1s" src="/Content/Inspiration/forest3.jpg"></div>
+        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/forest5.jpg"></div>
+        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/forest4.jpg"></div>
+        <div class="album-item quote"><p class="wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">Я вижу мир по другому, и каждый день пытаюсь найти что-то прекрасное и поделиться этим с другими</p></div>
+        <div class="album-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/профиль.jpg"></div>
+    </div>
+</div>
+
+
+<div class="services_title wow slideInDown" data-wow-duration="1.5s" data-wow-offset="200">
+    <h1>Мои услуги</h1>
+</div>
+
+<div class="services">
+    <div class="services_wrap">
+        <div class="serv_item wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">
+            <i class="fas fa-camera-retro"></i>
+            <p class="serv_title">Lorem ipsum</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="serv_item wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s">
+            <i class="fas fa-camera-retro"></i>
+            <p class="serv_title">Lorem ipsum</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+    <div class="services_wrap">
+        <div class="serv_item wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s">
+            <i class="fas fa-camera-retro"></i>
+            <p class="serv_title">Lorem ipsum</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="serv_item wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="2.1s">
+            <i class="fas fa-camera-retro"></i>
+            <p class="serv_title">Lorem ipsum</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+</div>
+
+<div class="advantages">
+    <div class="adv_list">
+        <div class="adv_item_wrap">
+            <div class="adv_item">
+                <i class="far fa-gem"></i>
+                <p class="serv_title">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
+            </div>
+            <div class="adv_item">
+                <i class="far fa-gem"></i>
+                <p class="serv_title">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
+            </div>
+        </div>
+        <div class="adv_item_wrap">
+            <div class="adv_item">
+                <i class="far fa-gem"></i>
+                <p class="serv_title">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
+            </div>
+            <div class="adv_item">
+                <i class="far fa-gem"></i>
+                <p class="serv_title">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
+            </div>
+        </div>
+    </div>
+    <div class="adv_image">
+        <img src="http://www.ceilicornelison.com/wp-content/uploads/2015/03/behnt.jpeg">
+    </div>
+</div>
+
+<div class="home_contact">
+    <div class="home_contact_container">
+        <div class="contacts">
+            <div class="contacts-wrap">
+                <div class="phone">
+                    <h2>Связь со мной</h2>
+                    <p>Связаться со мной, заказать фотосъемку и уточнить детали, Вы можете по телефону</p>
+                    <h1 class="h1-title">+38 (066) 377-78-16</h1>
+                    <div class="messengers">
+                        <p>WhatsUp/Viber/Telegram</p>
+
+                        <ul>
+                            <li><i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i></li>
+                            <li><i class="fab fa-viber fa-2x" aria-hidden="true"></i></li>
+                            <li><i class="fab fa-telegram-plane fa-2x" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+
+                <div class="social">
+                    <ul>
+                        <li><i class="fab fa-facebook-f" aria-hidden="true"></i></li>
+                        <li><i class="fab fa-instagram" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

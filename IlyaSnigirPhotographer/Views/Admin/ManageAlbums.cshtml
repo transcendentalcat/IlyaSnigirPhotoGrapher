@@ -1,0 +1,41 @@
+﻿@model IEnumerable<IlyaSnigirPhotographer.Models.Album>
+
+<p>
+    @Html.ActionLink("Добавить новый альбом", "CreateAlbum")
+</p>
+
+<h1>Альбомы</h1>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           <a href="/Admin/ManagePhotos/@item.AlbumID">@item.Title</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,15 @@
+﻿@model IlyaSnigirPhotographer.Models.Photo
+
+<h3>Вы действительно хотите удалить эту фотографию?</h3>
+<div>
+    <p>Ид.: @Html.DisplayFor(m => m.PhotoID)</p>
+    <p>Название: @Html.DisplayFor(m => m.Title)</p>
+    <p>Дата создания: @Html.DisplayFor(m => m.CreatedDate)</p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Удалить" />
+    }
+</div>
