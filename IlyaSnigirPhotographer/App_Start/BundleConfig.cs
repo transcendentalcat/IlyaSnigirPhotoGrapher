@@ -30,6 +30,8 @@ namespace IlyaSnigirPhotographer
                       "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/style").Include(
                       "~/Content/style.css"));
+            bundles.Add(new StyleBundle("~/Content/Animate").Include(
+                      "~/Content/Animate.css"));
         }
     }
 }

@@ -78,10 +78,10 @@ nav.black ul li a {
 	color: #fff;
 }
 
- nav ul li {
-        padding: 14px 10px;
-        flex-basis: 25%;
-        
+nav ul li {
+    padding: 14px 10px;
+    flex-basis: 25%;
+    white-space: nowrap;
 }
 
 nav ul li a {
@@ -164,17 +164,25 @@ nav ul li a {
 	transition: .3s;
 	}
 
-	nav ul li a:hover {
-	background: transparent;
-	
-}
-}
+    nav ul li a:hover {
+        background: transparent;
+    }
+
 
 nav ul li a:hover {
 	background: #ea001e;
 	color: #fff;
 	border-radius: 6px;
 	transition: .3s;
+}
+
+/*Заголовок*/
+
+h1.gen-title {
+    margin-top: 20em;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    font-size: 40px;
 }
 
 /* Слайдер*/
@@ -550,6 +558,7 @@ nav ul li a:hover {
 
 /* Альбом*/
 .album-title {
+    margin-top: 20px;
 	text-align: center;
 	font-family: 'Poiret One', cursive;
 	font-size: 40px;
