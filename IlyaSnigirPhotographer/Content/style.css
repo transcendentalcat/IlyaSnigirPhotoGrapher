@@ -105,42 +105,42 @@ nav ul li a {
 }
 
 @media screen and (max-width: 710px) {
-	
-	.logo {
-		position: fixed;
-		top: 0;
-		margin-top: 10px;
-		color: #fff;
-	}
-	
-	.menu {
-		float: none;
-	}
 
-	nav {
-		background: rgba(0, 0, 0, 0.8);
-	}
+    .logo {
+        position: fixed;
+        top: 0;
+        margin-top: 10px;
+        color: #fff;
+    }
 
-	nav.black {
-		background: rgba(0, 0, 0, 0.8);
-	}
+    .menu {
+        float: none;
+    }
 
-	header nav ul {
-		max-height: 0px;
-		flex-direction: column;
-	}	
+    nav {
+        background: rgba(0, 0, 0, 0.8);
+    }
 
-	nav.black ul {
-		color: #fff;
-	}
+        nav.black {
+            background: rgba(0, 0, 0, 0.8);
+        }
 
-	nav.black ul li a {
-		color: #fff;
-	}
+    header nav ul {
+        max-height: 0px;
+        flex-direction: column;
+    }
 
-	.showing {
-		max-height: 20em;
-	}
+    nav.black ul {
+        color: #fff;
+    }
+
+        nav.black ul li a {
+            color: #fff;
+        }
+
+    .showing {
+        max-height: 20em;
+    }
 
     nav ul li {
         box-sizing: border-box;
@@ -150,23 +150,24 @@ nav ul li a {
         white-space: nowrap;
     }
 
-	nav ul li a {
-		color: #fff;
-        white-space: nowrap;
-	}
+        nav ul li a {
+            color: #fff;
+            white-space: nowrap;
+        }
 
-	.menu-icon {
-		display: block;
-	}
+    .menu-icon {
+        display: block;
+    }
 
-	nav ul li:hover {
-	background: #ea001e;
-	transition: .3s;
-	}
+    nav ul li:hover {
+        background: #ea001e;
+        transition: .3s;
+    }
 
     nav ul li a:hover {
         background: transparent;
     }
+}
 
 
 nav ul li a:hover {
@@ -754,7 +755,7 @@ h1.gen-title {
 	background-position: center center;
 	background-origin: border-box;
 	background-size: cover;
-	background-image: url("2.jpg");/*https://ion.stati.org/wp-content/uploads/2015/09/design3.jpg*/
+	background-image: url("");/*https://ion.stati.org/wp-content/uploads/2015/09/design3.jpg*/
 	background-attachment: fixed;
 	color: #fff;
 }
@@ -956,7 +957,7 @@ h1.gen-title {
 	background-position: center center;
 	background-origin: border-box;
 	background-size: cover;
-	background-image: url("IMG_834912.jpg");
+	background-image: url("Images/IMG_834912.jpg");
 }
 
 .contact-cover img {

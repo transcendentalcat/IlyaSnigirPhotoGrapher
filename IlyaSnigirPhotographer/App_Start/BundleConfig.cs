@@ -24,7 +24,8 @@ namespace IlyaSnigirPhotographer
                       "~/Scripts/respond.js"));
             bundles.Add(new ScriptBundle("~/bundles/script").Include(
                         "~/Scripts/script.js"));
-
+            bundles.Add(new ScriptBundle("~/bundles/wow").Include(
+                        "~/Scripts/wow.min.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
