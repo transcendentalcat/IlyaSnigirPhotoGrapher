@@ -447,11 +447,14 @@ h1.gen-title {
 }
 
 .services .services_wrap .serv_item {
-	width: 200px;
-	text-align: center;
-	box-sizing: border-box;
-	padding: 20px;
-	/*//transition: .5s;*/
+    width: 200px;
+    text-align: center;
+    border: solid thin;
+    border-color: #383838;
+    border-radius: 20px;
+    /*box-sizing: border-box;*/
+    padding: 20px;
+    /*//transition: .5s;*/
 }
 
 .services .serv_item i {
@@ -460,9 +463,7 @@ h1.gen-title {
 }
 
 .serv_item:hover {
-	border-radius: 20px;
-	border: solid thin;
-	border-color: #aaa;
+    border-color: #fff;
 }
 
 .services .serv_item .serv_title {
@@ -501,7 +502,7 @@ h1.gen-title {
 .advantages .adv_item {
 	width: 200px;
 	text-align: center;
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 	padding: 10px;
 }
 
@@ -1111,14 +1112,14 @@ h1.gen-title {
 	background-origin: border-box;
 	background-size: cover;
 	background-attachment: fixed;
-	background-image: url("5.jpg");
+	background-image: url("IMG_794711.jpg");
 }
 
 #services-block .services{
 	display: flex;
 	flex-direction: column;
 	background: rgba(0, 0, 0, 0.6);
-	//height: 100vh;
+	height: 90%;
 
 }
 
@@ -1128,8 +1129,6 @@ h1.gen-title {
 	font-size: 3em;
 	font-weight: bolder;
 	text-transform: uppercase;
-
-
 }
 
 #services-block .services i {
