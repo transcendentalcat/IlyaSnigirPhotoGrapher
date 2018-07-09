@@ -10,7 +10,7 @@ namespace IlyaSnigirPhotographer.Controllers
     public class PhotoController : Controller
     {
         PortfolioDbContext db = new PortfolioDbContext();
-        const int recordsPerPage = 8;
+        const int recordsPerPage = 2;
 
         public ActionResult Index(int? id)
         {

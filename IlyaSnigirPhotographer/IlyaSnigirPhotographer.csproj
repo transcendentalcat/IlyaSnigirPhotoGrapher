@@ -368,10 +368,11 @@
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\Photos.cshtml" />
     <Content Include="Views\Home\DisplayAjax.cshtml" />
+    <Content Include="Views\Photo\Index.cshtml" />
+    <Content Include="Views\Photo\_Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Photo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
