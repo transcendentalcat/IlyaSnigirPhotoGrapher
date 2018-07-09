@@ -87,7 +87,7 @@ namespace IlyaSnigirPhotographer.Controllers
                 return HttpNotFound();
             }
 
-            return View("Display", photo);
+            return PartialView("DisplayAjax", photo);
         }
     }
 }
