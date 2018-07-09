@@ -213,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Animate.css" />
+    <Content Include="Content\Animations\loading.gif" />
     <Content Include="Content\BeforeAfter\до.jpg" />
     <Content Include="Content\BeforeAfter\после.jpg" />
     <Content Include="Content\bootstrap.css" />
