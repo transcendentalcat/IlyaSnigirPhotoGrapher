@@ -18,7 +18,7 @@
             _inCallback = true;
             page++;
             $('div#loading').html('<p><img src="/Content/Animations/loading.gif"></p>');
-            $.get("/Photo/Index/" + page, function (data) {
+            $.get("/Photo/Index?id=" + page + "&albumId=@ViewBag.AlbumId", function (data) {
                 if (data != '') {
                     $("#photoList").append(data);
                 }
@@ -47,10 +47,6 @@
 <div class="album-title">
     <p>Альбом с фотографиями: @ViewBag.AlbTitle</p>
 </div>
-<h2>@ViewBag.Message</h2>
-<p>
-
-</p>
 
 <div id="photoList" class="album">
     @Html.Partial("_Photos")

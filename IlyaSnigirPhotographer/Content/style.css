@@ -1275,3 +1275,7 @@ footer {
     color: #fff;
     text-align: right;
 }
+
+#loading {
+    text-align: center;
+}

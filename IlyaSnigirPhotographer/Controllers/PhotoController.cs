@@ -12,35 +12,36 @@ namespace IlyaSnigirPhotographer.Controllers
         PortfolioDbContext db = new PortfolioDbContext();
         const int recordsPerPage = 2;
 
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? id, int albumId)
         {
+            ViewBag.AlbumId = albumId;
             var page = id ?? 0;
 
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_Photos", GetPaginatedPhotos(page));
+                return PartialView("_Photos", GetPaginatedPhotos(page, albumId));
             }
 
             return View("Index", db.Photos.Take(recordsPerPage));
         }
 
-        public ActionResult Product(int? id)
+        public ActionResult Product(int? id, int albumId)
         {
             var page = id ?? 0;
 
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_Photos", GetPaginatedPhotos(page));
+                return PartialView("_Photos", GetPaginatedPhotos(page, albumId));
             }
 
             return View("Index", db.Photos.Take(recordsPerPage));
         }
 
-        private List<Photo> GetPaginatedPhotos(int page = 1)
+        private List<Photo> GetPaginatedPhotos(int albumId, int page = 1)
         {
             var skipRecords = page * recordsPerPage;
 
-            return db.Photos
+            return db.Photos.Where(p => p.AlbumID == albumId)
                 .OrderBy(x => x.CreatedDate)
                 .Skip(skipRecords)
                 .Take(recordsPerPage).ToList();
