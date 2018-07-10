@@ -12,6 +12,7 @@ body {
 .wrapper {
 	display: flex;
 	flex-direction: column;
+    min-height: 100vh;
 }
 /* Панель навигации */
 
@@ -318,7 +319,7 @@ h1.gen-title {
     max-width: 30pt;
     max-height: 30pt;
     opacity: 0.2;
-    transiton-property: opacity scale;
+    transition-property: opacity scale;
     transition-duration: .5s;
 }
 
@@ -434,7 +435,7 @@ h1.gen-title {
 .services {
 	display: flex;
 	flex-wrap: wrap;
-	//justify-content: space-around;
+	/*justify-content: space-around;*/
 	padding: 3vw;
 	margin-bottom: 15vh;
 }
@@ -477,7 +478,6 @@ h1.gen-title {
 	display: flex;
 	flex-wrap: wrap;
 	/*//justify-content: space-around;*/
-	
 	color: #fff;
 	background-color: #111;
 	align-items: center;
@@ -487,7 +487,7 @@ h1.gen-title {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 3vw;
-	//justify-content: space-around;
+	/*justify-content: space-around;*/
 	align-items: center;
 	flex: 1;
 }
@@ -588,7 +588,7 @@ h1.gen-title {
 .album .album-item img, p {
 	width: 100%;
 	height: auto;
-	transiton-property: opacity scale;
+	transition-property: opacity scale;
 	transition-duration: .5s;
 }
 
@@ -605,8 +605,6 @@ h1.gen-title {
 		padding: 0;
 	}
 }
-
-
 /* Лайтбокс и галерея фотографий*/
 
 .lightbox {
@@ -666,8 +664,6 @@ h1.gen-title {
 .prev-l:hover, .next-l:hover {
 	opacity: 1;
 }
-
-
 
 /* Портфолио */
 
@@ -769,7 +765,7 @@ h1.gen-title {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	//border: solid thin;
+	/*border: solid thin;*/
 	border-radius: 50px;
 }
 
@@ -799,7 +795,7 @@ h1.gen-title {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	//align-items: center;
+	/*align-items: center;*/
 	z-index: 2;
 	text-align: center;
 }
@@ -808,7 +804,7 @@ h1.gen-title {
 	flex: 100%;
 	text-align: center;
 	font-size: 35px;
-	//font-family: 'Pacifico', cursive;
+	/*font-family: 'Pacifico', cursive;*/
 	font-family: 'Montserrat', sans-serif;
 	font-weight: normal;
 
@@ -1074,7 +1070,7 @@ h1.gen-title {
 #member3 {
 	height: 100vh;
 	background-repeat: no-repeat;
-	background-position: top; center;
+	background-position: top; 
 	background-origin: border-box;
 	background-size: cover;
 	background-attachment: fixed;
@@ -1085,7 +1081,7 @@ h1.gen-title {
 .black-shadow {
 	height: 100vh;
 	display: flex;
-	width: 100wh;
+	width: 100vw;
 	justify-content: center;
 	align-items: center;
 	background: rgba(38, 38, 38, 0.5);
@@ -1272,8 +1268,14 @@ h1.gen-title {
 
 footer {
     background-color: #111;
+    height: 100px;
     color: #fff;
     text-align: right;
+    margin: 0;
+}
+
+footer > p {
+    margin: 0;
 }
 
 #loading {

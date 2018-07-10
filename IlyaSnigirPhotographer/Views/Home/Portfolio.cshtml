@@ -13,13 +13,13 @@
 {
 <div class="gallery_item">
     <div class="gallery_album" style="background-image: url( @Url.Action("GetImage", "Home", new { id = Model.ElementAt(j).Photos.FirstOrDefault().PhotoID }))">
-        <div class="shadow"><div class="name"><a href="/Home/Photos/@(j+1)">@Model.ElementAt(j).Title</a></div></div>
+        <div class="shadow"><div class="name"><a href="/Photo/Index?albumId=@(j+1)">@Model.ElementAt(j).Title</a></div></div>
 
     </div>
     @if ((j + 1) < Model.Count())
     {
     <div class="gallery_album" style="background-image: url(@Url.Action("GetImage", "Home", new { id = Model.ElementAt(j + 1).Photos.FirstOrDefault().PhotoID }))">
-        <div class="shadow"><div class="name"><a href="/Home/Photos/@(j + 2)">@Model.ElementAt(j + 1).Title</a></div></div>
+        <div class="shadow"><div class="name"><a href="/Photo/Index?albumId=@(j + 2)">@Model.ElementAt(j + 1).Title</a></div></div>
 
     </div>
     }
