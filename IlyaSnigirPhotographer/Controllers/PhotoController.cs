@@ -10,17 +10,23 @@ namespace IlyaSnigirPhotographer.Controllers
     public class PhotoController : Controller
     {
         PortfolioDbContext db = new PortfolioDbContext();
-        const int recordsPerPage = 4;
+        const int recordsPerPage = 2;
 
         public ActionResult Index(int? id, int albumId)
         {
             ViewBag.AlbumId = albumId;
+            ViewBag.AlbTitle = db.Albums.Find(albumId).Title;
+            ViewBag.IsFinish = false;
+
             var page = id ?? 0;
 
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_Photos", GetPaginatedPhotos(page, albumId));
+                return PartialView("_Photos", GetPaginatedPhotos(albumId, page));
             }
+
+            if (GetPaginatedPhotos(albumId, ++page).Count == 0)
+                ViewBag.IsFinish = true;
 
             return View("Index", db.Photos.Take(recordsPerPage));
         }

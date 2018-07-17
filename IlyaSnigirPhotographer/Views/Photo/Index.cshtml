@@ -19,13 +19,13 @@
             page++;
             $('div#loading').html('<p><img src="/Content/Animations/loading.gif"></p>');
             $.get("/Photo/Index?id=" + page + "&albumId=@ViewBag.AlbumId", function (data) {
-                if (data != '') {
+                if (data.length > 10) {
                     $("#photoList").append(data);
                 }
                 else {
-                    page = -1;
+                    page = -10;
                 }
-
+                
                 _inCallback = false;
                 $('div#loading').empty();
             });
@@ -40,12 +40,14 @@
             loadProducts();
         }
     });
+
+    
 </script>
 
 
 <div class="space"></div>
 <div class="album-title">
-    <p>Альбом с фотографиями: @ViewBag.AlbTitle</p>
+    <p>@ViewBag.AlbTitle</p>
 </div>
 
 <div id="photoList" class="album">
