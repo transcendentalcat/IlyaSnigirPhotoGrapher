@@ -25,9 +25,6 @@ namespace IlyaSnigirPhotographer.Controllers
                 return PartialView("_Photos", GetPaginatedPhotos(albumId, page));
             }
 
-            if (GetPaginatedPhotos(albumId, ++page).Count == 0)
-                ViewBag.IsFinish = true;
-
             return View("Index", db.Photos.Take(recordsPerPage));
         }
 

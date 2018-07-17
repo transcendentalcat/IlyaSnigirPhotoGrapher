@@ -50,9 +50,9 @@ window.onload = function () {
 
 //Before_After
 
-$(document).ready(function () {
+$(document).ready(function() {
     var mouse_down = false;
-    $('#ba_box').mousemove(function (event) {
+    $('#ba_box').mousemove(function(event) {
         var leftpos = event.pageX - $("#ba_box").offset().left;
         var rightpos = 700 - leftpos;
         if (mouse_down && leftpos >= 0 && leftpos <= 700) {
@@ -62,10 +62,33 @@ $(document).ready(function () {
             $('#ba_cursor').css('left', leftpos - 10);
         }
     });
-    $("#ba_cursor").mousedown(function () { mouse_down = true; });
-    $(document).mouseup(function () { mouse_down = false; });
-}
-)
+    $("#ba_cursor").mousedown(function() { mouse_down = true; });
+    $(document).mouseup(function() { mouse_down = false; });
+});
+
+//Lightbox
+
+$(document).ready(function () {
+    $(".album .album-item img").on("click", function () {
+        $(".lightbox").css("display", "block");
+        var cur_img = $(this).attr('src');
+        $("img.slide_lightbox").attr('src', cur_img);
+
+        var next_img = $(this).parent().next(".album-item").children("img").attr('src');
+        $(".next-l").on("click", function () {
+            $("img.slide_lightbox").attr('src', next_img);
+        });
+
+    });
+
+    $(".close p").on("click", function () {
+        $(".lightbox").css("display", "none");
+    });
+});
+
+var allImages = document.querySelectorAll(".album .album-item img");
+var currentImage;
+
 
 /*$(window).on('scroll', function(){
 	if($(window).scrollTop()) {
