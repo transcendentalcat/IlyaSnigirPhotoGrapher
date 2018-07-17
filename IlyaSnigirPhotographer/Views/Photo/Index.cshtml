@@ -40,31 +40,7 @@
             loadProducts();
         }
     });
-
-
-    var allImages = document.querySelectorAll(".album .album-item img");
-    var currentImage;
-
-    $(document).ready(function () {
-        $(".album .album-item img").on("click", function () {
-            $(".lightbox").css("display", "block");
-            var cur_img = $(this).attr('src');
-            $("img.slide_lightbox").attr('src', cur_img);
-
-            var next_img = $(this).parent().next(".album-item").children("img").attr('src');
-            $(".next-l").on("click", function () {
-                $("img.slide_lightbox").attr('src', next_img);
-            });
-
-        });
-
-        $(".close p").on("click", function () {
-            $(".lightbox").css("display", "none");
-        });
-    });
-
-    
-    
+ 
 </script>
 
 
@@ -87,3 +63,39 @@
         <div class="next-l"><p>&#10095;</p></div>
     </div>
 </div>
+
+<script>
+    var allImages = document.querySelectorAll(".album .album-item img");
+    var currentImage;
+    var currIndex;
+    $(document).ready(function () {
+        $(document).on("click", ".album > .album-item > img", function () {
+
+            $(".lightbox").css("display", "block");
+            cur_img = $(this).attr('src');
+            for (var i = 0; i < allImages.length; ++i) {
+                if (allImages[i].getAttribute('src') == cur_img)
+                    currIndex = i;
+            };
+        });
+            $("img.slide_lightbox").attr('src', cur_img);
+
+            //var next_img = $(this).parent().next(".album-item").children("img").attr('src');
+            $(".next-l").on("click", function () {
+                ++currIndex;
+                $("img.slide_lightbox").attr('src', allImages[currIndex].getAttribute('src'));
+                console.log(currIndex);
+            });
+
+            $(".prev-l").on("click", function () {
+                --currIndex;
+                $("img.slide_lightbox").attr('src', allImages[currIndex].getAttribute('src'));
+                console.log(currIndex);
+            });
+
+        $(".close p").on("click", function () {
+            $(".lightbox").css("display", "none");
+        });
+    });
+
+</script>
