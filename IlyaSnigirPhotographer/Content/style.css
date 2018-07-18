@@ -605,6 +605,8 @@ h1.gen-title {
 		padding: 0;
 	}
 }
+
+
 /* Лайтбокс и галерея фотографий*/
 
 .lightbox {
@@ -655,10 +657,11 @@ h1.gen-title {
 }
 
 .prev-l, .next-l {
-	font-size: 45px;
-	padding: 15px;
-	opacity: 0.5;
-	transition: .5s;
+    font-size: 45px;
+    cursor: pointer;
+    padding: 15px;
+    opacity: 0.5;
+    transition: .5s;
 }
 
 .prev-l:hover, .next-l:hover {

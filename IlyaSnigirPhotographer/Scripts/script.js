@@ -21,7 +21,8 @@ window.onload = function () {
 
         images[i].classList.add("showed");
         clearInterval(interval);
-        setTimeout(function () { interval = setInterval(LeafSlider, 8000) }, 8000);
+        //setTimeout(function () { interval = setInterval(LeafSlider, 8000) }, 8000);
+        console.log(interval);
     }
     function Prev() {
         images[i].classList.remove("showed");
@@ -31,7 +32,8 @@ window.onload = function () {
         }
         images[i].classList.add("showed");
         clearInterval(interval);
-        setTimeout(function () { interval = setInterval(LeafSlider, 8000) }, 8000);
+        //setTimeout(function () { interval = setInterval(LeafSlider, 8000) }, 8000);
+        console.log(interval);
     }
 
     function LeafSlider() {
