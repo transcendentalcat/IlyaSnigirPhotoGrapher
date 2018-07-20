@@ -94,6 +94,7 @@ nav ul li a {
     white-space: nowrap;
 }
 
+
 .menu-icon {
 	width: 100%;
 	text-align: right;
@@ -105,9 +106,18 @@ nav ul li a {
 	display: none;
 }
 
+@media screen and (min-width: 710px) {
+    nav ul li a:hover {
+        background: #ea001e;
+        color: #fff;
+        border-radius: 6px;
+        transition: .3s;
+    }
+}
+
 @media screen and (max-width: 710px) {
 
-    .logo {
+    .logo a {
         position: fixed;
         top: 0;
         margin-top: 10px;
@@ -122,9 +132,9 @@ nav ul li a {
         background: rgba(0, 0, 0, 0.8);
     }
 
-        nav.black {
-            background: rgba(0, 0, 0, 0.8);
-        }
+    nav.black {
+        background: rgba(0, 0, 0, 0.8);
+    }
 
     header nav ul {
         max-height: 0px;
@@ -135,9 +145,9 @@ nav ul li a {
         color: #fff;
     }
 
-        nav.black ul li a {
-            color: #fff;
-        }
+    nav.black ul li a {
+        color: #fff;
+    }
 
     .showing {
         max-height: 20em;
@@ -146,15 +156,15 @@ nav ul li a {
     nav ul li {
         box-sizing: border-box;
         width: 100%;
-        padding: 24px 0;
+        height: 70px;
         text-align: center;
         white-space: nowrap;
     }
 
-        nav ul li a {
-            color: #fff;
-            white-space: nowrap;
-        }
+    nav ul li a {
+        color: #fff;
+        white-space: nowrap;
+    }
 
     .menu-icon {
         display: block;
@@ -164,19 +174,8 @@ nav ul li a {
         background: #ea001e;
         transition: .3s;
     }
-
-    nav ul li a:hover {
-        background: transparent;
-    }
 }
 
-
-nav ul li a:hover {
-	background: #ea001e;
-	color: #fff;
-	border-radius: 6px;
-	transition: .3s;
-}
 
 /*Заголовок*/
 
