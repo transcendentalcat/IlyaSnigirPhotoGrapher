@@ -45,7 +45,7 @@
 
 
 <div class="space"></div>
-<div class="album-title">
+<div class="album-title anim">
     <p>@ViewBag.AlbTitle</p>
 </div>
 
@@ -99,5 +99,8 @@
             $(".lightbox").css("display", "none");
         });
     });
+
+    window.sr = ScrollReveal();
+    sr.reveal('.anim');
 
 </script>
