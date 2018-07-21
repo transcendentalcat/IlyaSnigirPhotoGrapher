@@ -1103,42 +1103,27 @@ h1.gen-title {
 /*Блок услуг*/
 
 #services-block {
-	color: #fff;
-	height: 100vh;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-origin: border-box;
-	background-size: cover;
-	background-attachment: fixed;
-	background-image: url("IMG_794711.jpg");
+    color: #fff;
+    height: 100vh;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: border-box;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('Images/5.jpg');
 }
 
-#services-block .services{
-	display: flex;
-	flex-direction: column;
-	background: rgba(0, 0, 0, 0.6);
-	height: 90%;
+ #services-block > h1 {
+     font-size: 40px;
+ }
 
+#services-block .services .services_wrap .serv_item {
+    border-color: #fff;
 }
 
-#services-block h1 {
-	flex: 1;
-	text-align: center;
-	font-size: 3em;
-	font-weight: bolder;
-	text-transform: uppercase;
-}
-
-#services-block .services i {
-	color: #aaa;
-}
-
-#services-block .services .serv_item {
-	background: rgba(24, 24, 24, 0.7);
-	width: 270px;
-}
-
-#services-block .services .serv_item:hover {
+#services-block .services .services_wrap .serv_item i{
+    color: #fff;
 }
 
 /*Прайслист*/

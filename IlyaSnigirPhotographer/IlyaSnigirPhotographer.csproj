@@ -219,6 +219,7 @@
     <Content Include="Content\BeforeAfter\после.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\5.jpg" />
     <Content Include="Content\Images\IMG_834912.jpg" />
     <Content Include="Content\IMG_1068.JPG" />
     <Content Include="Content\IMG_794711.jpg" />
