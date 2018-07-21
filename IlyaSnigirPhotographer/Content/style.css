@@ -190,11 +190,12 @@ h1.gen-title {
 
 .slider {
     position: relative;
+    height: 100vh;
 }
 
 .slider #photo {
     position: relative;
-    height: calc(100vw / 1.5);
+    /*height: calc(100vw / 1.5);*/
 }
 
 #slider #photo div .img {
