@@ -49,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.CreatedDate)
             </td>
             <td>
-                @Html.ActionLink("Переименовать", "RenamePhoto", new { id = item.PhotoID }) |
+                @Html.ActionLink("Редактировать", "EditPhoto", new { id = item.PhotoID }) |
                 @Html.ActionLink("Удалить", "DeletePhoto", new { id = item.PhotoID }, new { @class = "viewDialog", data_dialog_title = "Удаление фотографии" })
             </td>
         </tr>

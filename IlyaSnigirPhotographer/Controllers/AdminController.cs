@@ -1,6 +1,7 @@
 ﻿using IlyaSnigirPhotographer.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -36,6 +37,48 @@ namespace IlyaSnigirPhotographer.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult CreateAlbum()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateAlbum(Album album)
+        {
+            album.CreatedDate = DateTime.Now;
+            db.Albums.Add(album);
+            db.SaveChanges();
+
+            return RedirectToAction("ManageAlbums");
+        }
+
+        [HttpGet]
+        public ActionResult EditAlbum(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Album album = db.Albums.Find(id);
+            if (album != null)
+            {
+                return View(album);
+            }
+            return HttpNotFound();
+        }
+
+        [HttpPost]
+        public ActionResult EditAlbum(Album album)
+        {
+            Album editedAlbum = db.Albums.Find(album.AlbumID);
+            editedAlbum.Title = album.Title;
+            editedAlbum.Description = album.Description;
+            db.Entry(editedAlbum).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("ManageAlbums");
+        }
+
         public ActionResult ManagePhotos(int id)
         {
             ViewBag.AlbumId = id;
@@ -49,8 +92,7 @@ namespace IlyaSnigirPhotographer.Controllers
             {
                 ViewBag.Message = "Фотографии не найдены";
                 return View("NotFound");
-            }
-            
+            }           
         }
 
         public ActionResult ManageReviews()
@@ -98,7 +140,33 @@ namespace IlyaSnigirPhotographer.Controllers
                 db.SaveChanges();
                 return RedirectToAction("ManagePhotos", new { id = photo.AlbumID});
             }
-        }       
+        }
+
+        [HttpGet]
+        public ActionResult EditPhoto(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Photo photo = db.Photos.Find(id);
+            if (photo != null)
+            {
+                return View(photo);
+            }
+            return HttpNotFound();
+        }
+
+        [HttpPost]
+        public ActionResult EditPhoto(Photo photo)
+        {
+            Photo editedPhoto = db.Photos.Find(photo.PhotoID);
+            editedPhoto.Title = photo.Title;
+            editedPhoto.Description = photo.Description;
+            db.Entry(editedPhoto).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("ManagePhotos", new { id = editedPhoto.AlbumID });
+        }
 
         public ActionResult DeletePhoto(int id)
         {
@@ -110,6 +178,7 @@ namespace IlyaSnigirPhotographer.Controllers
             }
             return View("Index");
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
