@@ -50,12 +50,23 @@
             </td>
             <td>
                 @Html.ActionLink("Переименовать", "RenamePhoto", new { id = item.PhotoID }) |
-                @Html.ActionLink("Удалить", "DeletePhoto", new { id = item.PhotoID }, new { @class = "viewDialog", data_dialog_title = "Удаление фотографии" })
+                @*@Html.ActionLink("Удалить", "DeletePhoto", new { id = item.PhotoID }, new { @class = "viewDialog", data_dialog_title = "Удаление фотографии" })*@
+                <a href="javascript:PopUpShow()">Удалить</a>
             </td>
         </tr>
     }
 
 </table>
+
+<div class="b-popup" id="popup1">
+    <div class="b-popup-content" >
+        Вы действительно хотите удалить фотографию?
+        <div>
+            <button class="btn btn-default yes-btn">Да</button>
+            <button class="btn btn-default no-btn">Нет</button>
+        </div>        
+    </div>
+</div>
 
 <script src='@Url.Content("~/Scripts/jquery-1.12.4.min.js")' type="text/javascript"></script>
 <script src='@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")' type="text/javascript"></script>
@@ -78,4 +89,17 @@
                 .load(this.href);
         });
     });
+
+        $(document).ready(function(){
+            //PopUpHide();
+            $(".no-btn").click(PopUpHide);
+        });
+
+        function PopUpShow(){
+            $("#popup1").fadeIn();
+        }
+
+        function PopUpHide() {
+            $("#popup1").fadeOut();
+        }
 </script>
