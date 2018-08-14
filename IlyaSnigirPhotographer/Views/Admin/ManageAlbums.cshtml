@@ -31,7 +31,7 @@
             @Html.DisplayFor(modelItem => item.CreatedDate)
         </td>
         <td>
-            @Html.ActionLink("Переименовать", "Edit", new { id=item.AlbumID }) |
+            @Html.ActionLink("Редактировать", "EditAlbum", new { id=item.AlbumID }) |
             @Html.ActionLink("Удалить", "Delete", new { id=item.AlbumID })
         </td>
     </tr>
