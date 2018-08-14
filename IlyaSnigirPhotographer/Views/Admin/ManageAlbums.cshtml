@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<IlyaSnigirPhotographer.Models.Album>
 
-<p>
-    @Html.ActionLink("Добавить новый альбом", "CreateAlbum")
-</p>
 
 <h1>Альбомы</h1>
+
+<p>
+    <input type="button" class="btn" value="Добавить новый альбом" onclick="location.href='@Url.Action("CreateAlbum", "Admin", new {id = ViewBag.AlbumId})'" />
+</p>
+
 <table class="table">
     <tr>
         <th>
@@ -31,8 +33,8 @@
             @Html.DisplayFor(modelItem => item.CreatedDate)
         </td>
         <td>
-            @Html.ActionLink("Редактировать", "EditAlbum", new { id=item.AlbumID }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.AlbumID })
+            <input type="button" class="btn" value="Редактировать" onclick="location.href='@Url.Action("EditAlbum", "Admin", new {id = item.AlbumID})'" />
+            <input type="button" class="btn delete-btn" value="Удалить"/>
         </td>
     </tr>
 }

@@ -8,7 +8,7 @@
 <h2>@ViewBag.AlbumTitle</h2>
 
 <p>
-    @Html.ActionLink("Добавить фотографию", "AddPhoto", new { id = ViewBag.AlbumId })
+    <input type="button" class="btn" value="Добавить фотографию" onclick="location.href='@Url.Action("AddPhoto", "Admin", new {id = ViewBag.AlbumId})'" />
 </p>
 <table class="table">
     <tr>
@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.CreatedDate)
             </td>
             <td>
-                @Html.ActionLink("Переименовать", "RenamePhoto", new { id = item.PhotoID }) |
+                <input type="button" class="btn" value="Редактировать" onclick="location.href='@Url.Action("EditPhoto", "Admin", new {id = item.PhotoID})'" />
                 @*@Html.ActionLink("Удалить", "DeletePhoto", new { id = item.PhotoID }, new { @class = "viewDialog", data_dialog_title = "Удаление фотографии" })*@
-                <a href="javascript:PopUpShow()">Удалить</a>
+                <input type="button" class="btn delete-btn" value="Удалить"/>
             </td>
         </tr>
     }
@@ -91,8 +91,9 @@
     });
 
         $(document).ready(function(){
-            //PopUpHide();
+            PopUpHide();
             $(".no-btn").click(PopUpHide);
+            $(".delete-btn").click(PopUpShow);
         });
 
         function PopUpShow(){
