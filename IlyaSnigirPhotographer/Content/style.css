@@ -1309,9 +1309,8 @@ footer > p {
     align-items: center;
 }
 
-.b-popup-content button {
+.b-popup-content .btn {
     font-size: 16pt;
-
 }
 
 /*Кнопка возврата наверх*/

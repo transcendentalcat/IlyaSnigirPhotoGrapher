@@ -21,22 +21,48 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-           <a href="/Admin/ManagePhotos/@item.AlbumID">@item.Title</a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            <input type="button" class="btn" value="Редактировать" onclick="location.href='@Url.Action("EditAlbum", "Admin", new {id = item.AlbumID})'" />
-            <input type="button" class="btn delete-btn" value="Удалить"/>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                <a href="/Admin/ManagePhotos/@item.AlbumID">@item.Title</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                <input type="button" class="btn" value="Редактировать" onclick="location.href='@Url.Action("EditAlbum", "Admin", new {id = item.AlbumID})'" />
+                <input type="button" class="btn delete-btn" value="Удалить"/>
+                <div class="b-popup" id="popup1">
+                    <div class="popup-wrapper">
+                        <div class="b-popup-content">
+                            Вы действительно хотите удалить альбом?
+                            <div>
+                                <input type="button" class="btn btn-default yes-btn" value="Удалить" onclick="location.href='@Url.Action("DeleteAlbum", "Admin", new {id = item.AlbumID})'" />
+                                <button class="btn btn-default no-btn">Нет</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
 
 </table>
+
+<script>   
+    $(document).ready(function(){
+        $(".no-btn").click(PopUpHide);
+        $(".delete-btn").click(PopUpShow);
+    });
+
+    function PopUpShow(){
+        $("#popup1").fadeIn();
+    }
+
+    function PopUpHide() {
+        $("#popup1").fadeOut();
+    }
+</script>

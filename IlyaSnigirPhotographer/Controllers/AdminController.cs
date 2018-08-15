@@ -79,6 +79,18 @@ namespace IlyaSnigirPhotographer.Controllers
             return RedirectToAction("ManageAlbums");
         }
 
+        public ActionResult DeleteAlbum(int id)
+        {
+            Album album = db.Albums.Find(id);
+
+            if (album != null)
+            {
+                db.Albums.Remove(album);
+                db.SaveChanges();
+            }
+            return RedirectToAction("ManageAlbums");
+        }
+
         public ActionResult ManagePhotos(int id)
         {
             ViewBag.AlbumId = id;
@@ -167,22 +179,8 @@ namespace IlyaSnigirPhotographer.Controllers
             db.SaveChanges();
             return RedirectToAction("ManagePhotos", new { id = editedPhoto.AlbumID });
         }
-
+        
         public ActionResult DeletePhoto(int id)
-        {
-            Photo photo = db.Photos.Find(id);
-            int AlbumId = photo.AlbumID;
-            if (photo != null)
-            {
-                return PartialView("DeletePhoto", photo);
-            }
-            return View("Index");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [ActionName("Delete")]
-        public ActionResult DeletePhotoRecord(int id)
         {
             Photo photo = db.Photos.Find(id);
             int AlbumId = photo.AlbumID;

@@ -105,6 +105,20 @@ $(".btn-up").on("click", function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
 });
 
+/*PopUp window for delete*/
+$(document).ready(function () {
+    $(".no-btn").click(PopUpHide);
+    $(".delete-btn").click(PopUpShow);
+});
+
+function PopUpShow() {
+    $("#popup1").fadeIn();
+}
+
+function PopUpHide() {
+    $("#popup1").fadeOut();
+}
+
 /*$(window).on('scroll', function(){
 	if($(window).scrollTop()) {
 		$('nav').addClass('black');
