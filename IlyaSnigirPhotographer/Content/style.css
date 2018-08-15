@@ -937,8 +937,11 @@ h1.gen-title {
 	background: #e4405f;
 }
 
+.social ul li:nth-child(3):before {
+    background: #45668e;
+}
 .social ul li .fab {
-	transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .social ul li:hover .fab {
