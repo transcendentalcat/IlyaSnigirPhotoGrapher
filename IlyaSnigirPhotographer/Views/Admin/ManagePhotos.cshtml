@@ -59,12 +59,14 @@
 </table>
 
 <div class="b-popup" id="popup1">
-    <div class="b-popup-content" >
-        Вы действительно хотите удалить фотографию?
-        <div>
-            <button class="btn btn-default yes-btn">Да</button>
-            <button class="btn btn-default no-btn">Нет</button>
-        </div>        
+    <div class="popup-wrapper">
+        <div class="b-popup-content">
+            Вы действительно хотите удалить фотографию?
+            <div>
+                <button class="btn btn-default yes-btn">Да</button>
+                <button class="btn btn-default no-btn">Нет</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -91,7 +93,6 @@
     });
 
         $(document).ready(function(){
-            PopUpHide();
             $(".no-btn").click(PopUpHide);
             $(".delete-btn").click(PopUpShow);
         });
