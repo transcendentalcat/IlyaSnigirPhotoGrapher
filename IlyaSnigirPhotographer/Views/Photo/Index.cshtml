@@ -64,6 +64,10 @@
     </div>
 </div>
 
+<div class="btn-up">
+    <i class="fas fa-arrow-circle-up"></i>
+</div>
+
 <script>
     var allImages;
     var currIndex;
@@ -103,4 +107,16 @@
     window.sr = ScrollReveal();
     sr.reveal('.anim');
 
+    $(window).on("scroll",
+        function() {
+            if ($(window).scrollTop() > 200) {
+                $(".btn-up").fadeIn();               
+            } else {
+                $(".btn-up").fadeOut();
+            }
+        });
+
+    $(".btn-up").on("click", function() {
+        $("html, body").animate({ scrollTop: 0 }, 600);
+    });
 </script>
