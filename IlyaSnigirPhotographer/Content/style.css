@@ -593,7 +593,7 @@ h1.gen-title {
 }
 
 .album .album-item img:hover {
-	transform: scale(1.05); 
+	
 }
 
 @media screen and (max-width: 400px) {

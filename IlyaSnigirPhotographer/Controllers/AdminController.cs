@@ -82,9 +82,10 @@ namespace IlyaSnigirPhotographer.Controllers
         public ActionResult DeleteAlbum(int id)
         {
             Album album = db.Albums.Find(id);
-
+            
             if (album != null)
             {
+                List<Photo> photos = db.Photos.Where(p => p.AlbumID == id).ToList();
                 db.Albums.Remove(album);
                 db.SaveChanges();
             }

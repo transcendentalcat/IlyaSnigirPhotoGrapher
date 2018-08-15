@@ -108,6 +108,14 @@ namespace IlyaSnigirPhotographer.Models
         {
             return new PortfolioDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Photo>()
+                .HasOptional<Album>(a => a.Album)
+                .WithMany()
+                .WillCascadeOnDelete(true);
+        }
     }
 
     public class PortfolioInitializer : CreateDatabaseIfNotExists<PortfolioDbContext>
