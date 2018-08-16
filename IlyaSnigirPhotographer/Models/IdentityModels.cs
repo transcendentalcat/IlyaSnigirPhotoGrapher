@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.IO;
 using System.Security.Claims;
@@ -28,6 +29,9 @@ namespace IlyaSnigirPhotographer.Models
     public class Album
     {
         public int AlbumID { get; set; }
+
+        public CoverPhoto Cover { get; set; }
+
         [Required]
         [DisplayName("Название")]
         public string Title { get; set; }
@@ -42,6 +46,24 @@ namespace IlyaSnigirPhotographer.Models
         public DateTime CreatedDate { get; set; }
 
         public virtual ICollection<Photo> Photos { get; set; }
+
+        public Album()
+        {
+            Cover = new CoverPhoto();
+        }
+    }
+
+    [ComplexType]
+    public class CoverPhoto
+    {
+        public int CoverPhotoID { get; set; }
+        
+        [DisplayName("Picture")]
+        [MaxLength]
+        public byte[] PhotoFile { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public string ImageMimeType { get; set; }       
     }
 
     public class Photo
@@ -109,13 +131,15 @@ namespace IlyaSnigirPhotographer.Models
             return new PortfolioDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Photo>()
-                .HasOptional<Album>(a => a.Album)
-                .WithMany()
-                .WillCascadeOnDelete(true);
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Photo>()
+        //        .HasOptional<Album>(a => a.Album)
+        //        .WithMany()
+        //        .WillCascadeOnDelete(true);
+        //}
+
+       
     }
 
     public class PortfolioInitializer : CreateDatabaseIfNotExists<PortfolioDbContext>
@@ -124,21 +148,6 @@ namespace IlyaSnigirPhotographer.Models
         protected override void Seed(PortfolioDbContext context)
         {
             base.Seed(context);
-
-
-            var albums = new List<Album>
-            {
-                new Album
-                {
-                    Title = "Nature", CreatedDate = DateTime.Today.AddDays(-7), Description = "Beauliful nature"
-                },
-                new Album
-                {
-                    Title = "Traveling", CreatedDate = DateTime.Now, Description = "Just travelling"
-                }
-            };
-            albums.ForEach(a => context.Albums.Add(a));
-            context.SaveChanges();
 
             //Create some photos
             var photos = new List<Photo>
@@ -238,6 +247,23 @@ namespace IlyaSnigirPhotographer.Models
                     AlbumID = 1
                 }
             };
+
+            var albums = new List<Album>
+            {
+                new Album
+                {
+                    Title = "Nature", CreatedDate = DateTime.Today.AddDays(-7), Description = "Beauliful nature"
+                },
+                new Album
+                {
+                    Title = "Traveling", CreatedDate = DateTime.Now, Description = "Just travelling"
+                }
+            };
+
+
+            albums.ForEach(a => context.Albums.Add(a));
+            context.SaveChanges();
+
             photos.ForEach(s => context.Photos.Add(s));
             context.SaveChanges();
 

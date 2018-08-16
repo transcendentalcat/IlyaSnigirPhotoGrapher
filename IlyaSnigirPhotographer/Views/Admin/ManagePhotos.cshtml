@@ -51,6 +51,8 @@
             <td>
                 <input type="button" class="btn" value="Редактировать" onclick="location.href='@Url.Action("EditPhoto", "Admin", new {id = item.PhotoID})'" />
                 <input type="button" class="btn delete-btn" value="Удалить"/>
+                <input type="button" class="btn" value="Сделать обложкой альбома" onclick="location.href='@Url.Action("SetCover", "Admin", new {id = item.PhotoID})'" />
+
 
                 <div class="b-popup" id="popup1">
                     <div class="popup-wrapper">

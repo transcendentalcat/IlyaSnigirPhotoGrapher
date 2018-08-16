@@ -9,7 +9,7 @@
 <div class="space"></div>
 <h1 class="album-title"> Альбомы</h1>
 
-@for (int j = 0; j < Model.Count(); j += 2)
+@*@for (int j = 0; j < Model.Count(); j += 2)
 {
 <div class="gallery_item">
     <div class="gallery_album" style="background-image: url( @Url.Action("GetImage", "Home", new { id = Model.ElementAt(j).Photos.FirstOrDefault().PhotoID }))">
@@ -24,6 +24,23 @@
     </div>
     }
 </div>
+}*@
+
+@for (int j = 0; j < Model.Count(); j += 2)
+{
+    <div class="gallery_item">
+        <div class="gallery_album" style="background-image: url( @Url.Action("GetImage", "Home", new { id = Model.ElementAt(j).Cover.CoverPhotoID }))">
+            <div class="shadow"><div class="name"><a href="/Photo/Index?albumId=@Model.ElementAt(j).AlbumID">@Model.ElementAt(j).Title</a></div></div>
+
+        </div>
+        @if ((j + 1) < Model.Count())
+        {
+            <div class="gallery_album" style="background-image: url(@Url.Action("GetImage", "Home", new { id = Model.ElementAt(j + 1).Cover.CoverPhotoID }))">
+                <div class="shadow"><div class="name"><a href="/Photo/Index?albumId=@Model.ElementAt(j+1).AlbumID">@Model.ElementAt(j + 1).Title</a></div></div>
+
+            </div>
+        }
+    </div>
 }
 
 <div class="btn-up">

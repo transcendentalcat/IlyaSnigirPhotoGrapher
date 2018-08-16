@@ -1,6 +1,7 @@
 ﻿using IlyaSnigirPhotographer.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +34,15 @@ namespace IlyaSnigirPhotographer.Controllers
         public ActionResult Portfolio()
         {
             var albums = db.Albums;
+            foreach (var album in albums)
+            {
+                if (album.Cover.PhotoFile == null /*&& album.Photos.Count != 0*/)
+                {
+                    album.Cover.PhotoFile = album.Photos.FirstOrDefault().PhotoFile;
+                    album.Cover.ImageMimeType = album.Photos.FirstOrDefault().ImageMimeType;
+
+                }
+            }
 
             return View(albums);
         }

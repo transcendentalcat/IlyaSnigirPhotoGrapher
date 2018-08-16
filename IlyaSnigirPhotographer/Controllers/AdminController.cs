@@ -28,13 +28,19 @@ namespace IlyaSnigirPhotographer.Controllers
             var albums = db.Albums;
             if(albums != null)
             {
+                foreach (var album in albums)
+                {
+                    if (album.Cover.PhotoFile == null && album.Photos.Count != 0)
+                    {
+                        album.Cover.PhotoFile = album.Photos.FirstOrDefault().PhotoFile;
+                        album.Cover.ImageMimeType = album.Photos.FirstOrDefault().ImageMimeType;
+                    }
+                }
                 return View(albums);
             }
-            else
-            {
+            
                 ViewBag.Message = "Альбомы не найдены";
-                return View("NotFound");
-            }
+                return View("NotFound");           
         }
 
         [HttpGet]
@@ -46,7 +52,7 @@ namespace IlyaSnigirPhotographer.Controllers
         [HttpPost]
         public ActionResult CreateAlbum(Album album)
         {
-            album.CreatedDate = DateTime.Now;
+            album.CreatedDate = DateTime.Now;            
             db.Albums.Add(album);
             db.SaveChanges();
 
@@ -192,6 +198,16 @@ namespace IlyaSnigirPhotographer.Controllers
                 db.SaveChanges();
             }
             return RedirectToAction("ManagePhotos", new { id = AlbumId });
+        }
+
+        public ActionResult SetCover(int id)
+        {
+            Photo photo = db.Photos.Find(id);
+            Album album = photo.Album;
+            album.Cover.ImageMimeType = photo.ImageMimeType;
+            album.Cover.PhotoFile = photo.PhotoFile;
+
+            return RedirectToAction("ManagePhotos", new { id = album.AlbumID });
         }
 
         [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
