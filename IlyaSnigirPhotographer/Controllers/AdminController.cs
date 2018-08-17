@@ -30,10 +30,9 @@ namespace IlyaSnigirPhotographer.Controllers
             {
                 foreach (var album in albums)
                 {
-                    if (album.Cover.PhotoFile == null && album.Photos.Count != 0)
+                    if (album.CoverPhoto == null && album.Photos.Count != 0)
                     {
-                        album.Cover.PhotoFile = album.Photos.FirstOrDefault().PhotoFile;
-                        album.Cover.ImageMimeType = album.Photos.FirstOrDefault().ImageMimeType;
+                        album.CoverPhoto = album.Photos.FirstOrDefault().PhotoID;                       
                     }
                 }
                 return View(albums);
@@ -204,8 +203,7 @@ namespace IlyaSnigirPhotographer.Controllers
         {
             Photo photo = db.Photos.Find(id);
             Album album = photo.Album;
-            album.Cover.ImageMimeType = photo.ImageMimeType;
-            album.Cover.PhotoFile = photo.PhotoFile;
+            album.CoverPhoto = photo.PhotoID;
 
             return RedirectToAction("ManagePhotos", new { id = album.AlbumID });
         }

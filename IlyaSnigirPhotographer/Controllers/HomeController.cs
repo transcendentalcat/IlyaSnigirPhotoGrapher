@@ -34,15 +34,15 @@ namespace IlyaSnigirPhotographer.Controllers
         public ActionResult Portfolio()
         {
             var albums = db.Albums;
-            foreach (var album in albums)
-            {
-                if (album.Cover.PhotoFile == null /*&& album.Photos.Count != 0*/)
-                {
-                    album.Cover.PhotoFile = album.Photos.FirstOrDefault().PhotoFile;
-                    album.Cover.ImageMimeType = album.Photos.FirstOrDefault().ImageMimeType;
-
-                }
-            }
+            //var firstPhotos = albums.Select(a => new {a.AlbumID, a.Photos.FirstOrDefault().PhotoID});
+            //var albumsWithCover = albums.Where(a => a.CoverPhoto == null).Select()
+            //foreach (var album in albums)
+            //{
+            //    if (album.CoverPhoto == null /*&& album.Photos.Count != 0*/)
+            //    {
+            //        album.CoverPhoto = album.Photos.FirstOrDefault().PhotoID;
+            //    }
+            //}
 
             return View(albums);
         }

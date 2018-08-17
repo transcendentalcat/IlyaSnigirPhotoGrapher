@@ -30,7 +30,7 @@ namespace IlyaSnigirPhotographer.Models
     {
         public int AlbumID { get; set; }
 
-        public CoverPhoto Cover { get; set; }
+        public int? CoverPhoto  { get; set; }
 
         [Required]
         [DisplayName("Название")]
@@ -47,25 +47,9 @@ namespace IlyaSnigirPhotographer.Models
 
         public virtual ICollection<Photo> Photos { get; set; }
 
-        public Album()
-        {
-            Cover = new CoverPhoto();
-        }
-    }
-
-    [ComplexType]
-    public class CoverPhoto
-    {
-        public int CoverPhotoID { get; set; }
         
-        [DisplayName("Picture")]
-        [MaxLength]
-        public byte[] PhotoFile { get; set; }
-
-        [HiddenInput(DisplayValue = false)]
-        public string ImageMimeType { get; set; }       
     }
-
+   
     public class Photo
     {
         public int PhotoID { get; set; }
@@ -252,11 +236,11 @@ namespace IlyaSnigirPhotographer.Models
             {
                 new Album
                 {
-                    Title = "Nature", CreatedDate = DateTime.Today.AddDays(-7), Description = "Beauliful nature"
+                    Title = "Nature", CreatedDate = DateTime.Today.AddDays(-7), Description = "Beauliful nature", CoverPhoto = 2
                 },
                 new Album
                 {
-                    Title = "Traveling", CreatedDate = DateTime.Now, Description = "Just travelling"
+                    Title = "Traveling", CreatedDate = DateTime.Now, Description = "Just travelling", CoverPhoto = 1
                 }
             };
 
