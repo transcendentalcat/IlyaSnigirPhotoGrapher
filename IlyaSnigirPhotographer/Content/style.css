@@ -617,43 +617,48 @@ h1.gen-title {
 	left: 0;
 	background: rgba(0, 0, 0, 0.8);
 	color: #fff;
-	z-index: 9;
-	display: flex;
-	flex-direction: column;
-	display: none;
-	
+	z-index: 9;	
+	display: none;	
 }
 
 .close {
-	font-size: 48px;
-	height: 10%;
-	display: flex;
-	justify-content: center;
-	padding-right: 16%;
-	
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    font-size: 48px;
+    height: 10%;
+    height: 48px;
+    opacity: 0.5;
+    transition: .5s;
+    cursor: pointer;
 }
-.close p {
-	display: flex;
-	justify-content: flex-end;
-	float: right;
+/*.close p {
+    height: 48px;
 	opacity: 0.5;
 	transition: .5s;
 	cursor: pointer;
-}
+}*/
 
 .close p:hover {
 	opacity: 1;
 }
 
 .slide_wrapper {
+    width: 100vw;
+    height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center
 }
 
 .slide_lightbox {
-	max-width: 60%;
-	transition: 1s;
+    max-width: 100%;
+    transition: 1s;
+}
+
+.slide_lightbox_wrap {
+    max-width: 70%;
+    position: relative;
 }
 
 .prev-l, .next-l {

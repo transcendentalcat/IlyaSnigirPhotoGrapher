@@ -55,12 +55,18 @@
 
 <div id="loading"></div> 
 
-<div class="lightbox">
-    <div class="close"><p>&times;</p></div>
+<div class="lightbox">    
     <div class="slide_wrapper">
-        <div class="prev-l"><p>&#10094;</p></div>
-        <img class="slide_lightbox" src="">
-        <div class="next-l"><p>&#10095;</p></div>
+        <div class="prev-l">
+            <p>&#10094;</p>
+        </div>
+        <div class="slide_lightbox_wrap">
+            <div class="close">&times;</div>
+            <img class="slide_lightbox" src="">
+        </div>
+        <div class="next-l">
+            <p>&#10095;</p>
+        </div>
     </div>
 </div>
 
@@ -99,7 +105,7 @@
         });
 
       
-        $(".close p").on("click", function () {
+        $(".close").on("click", function () {
             $(".lightbox").css("display", "none");
         });
     });
