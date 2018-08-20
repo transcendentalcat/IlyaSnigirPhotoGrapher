@@ -208,6 +208,12 @@ namespace IlyaSnigirPhotographer.Controllers
             return RedirectToAction("ManagePhotos", new { id = album.AlbumID });
         }
 
+        public ActionResult ChangeContent()
+        {
+            return View();
+        }
+
+
         [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage(int id)
         {

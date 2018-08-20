@@ -95,11 +95,21 @@ namespace IlyaSnigirPhotographer.Models
         public virtual DateTime DateAdded { get; set; }
     }
 
+    public class SystemContent
+    {
+        public int Id { get; set; }
+        public byte[] IndexAvatarPhoto { get; set; }
+        public string IndexQuote { get; set; }
+        public byte[] ContactsAvatarPhoto { get; set; }
+        public byte[] ContactsCoverPhoto { get; set; }       
+    }
+
     public class PortfolioDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Album> Albums { get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<SystemContent> SystemContents { get; set; }
 
         public PortfolioDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

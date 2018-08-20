@@ -197,6 +197,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808171553594_InitialCreate.cs" />
+    <Compile Include="Migrations\201808171553594_InitialCreate.Designer.cs">
+      <DependentUpon>201808171553594_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808201444491_AddSystemContent.cs" />
+    <Compile Include="Migrations\201808201444491_AddSystemContent.Designer.cs">
+      <DependentUpon>201808201444491_AddSystemContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -323,7 +332,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -365,6 +373,7 @@
     <Content Include="Views\Admin\EditPhoto.cshtml" />
     <Content Include="Views\Admin\CreateAlbum.cshtml" />
     <Content Include="Views\Admin\EditAlbum.cshtml" />
+    <Content Include="Views\Admin\ChangeContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -383,6 +392,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808171553594_InitialCreate.resx">
+      <DependentUpon>201808171553594_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201444491_AddSystemContent.resx">
+      <DependentUpon>201808201444491_AddSystemContent.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
