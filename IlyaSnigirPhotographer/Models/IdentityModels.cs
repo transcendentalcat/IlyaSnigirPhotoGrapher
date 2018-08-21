@@ -261,6 +261,9 @@ namespace IlyaSnigirPhotographer.Models
             photos.ForEach(s => context.Photos.Add(s));
             context.SaveChanges();
 
+            var sc = new SystemContent();
+            context.SystemContents.Add(sc);
+            context.SaveChanges();
         }
 
 

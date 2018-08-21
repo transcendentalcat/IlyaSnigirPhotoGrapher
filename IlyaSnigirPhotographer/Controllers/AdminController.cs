@@ -204,15 +204,68 @@ namespace IlyaSnigirPhotographer.Controllers
             Photo photo = db.Photos.Find(id);
             Album album = photo.Album;
             album.CoverPhoto = photo.PhotoID;
+            db.SaveChanges();
 
             return RedirectToAction("ManagePhotos", new { id = album.AlbumID });
         }
 
         public ActionResult ChangeContent()
         {
-            return View();
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            return View(sc);
         }
 
+        [HttpPost]
+        public ActionResult ChangeIndexAvatarPhoto(HttpPostedFileBase Image)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("ChangeContent");
+            }
+            else
+            {
+                if (Image != null)
+                {
+                    SystemContent sc = db.SystemContents.FirstOrDefault();                    
+                    sc.IndexAvatarPhoto = new byte[Image.ContentLength];
+                    Image.InputStream.Read(sc.IndexAvatarPhoto, 0, Image.ContentLength);
+                    db.SaveChanges();
+                }
+
+            }
+
+            return RedirectToAction("ChangeContent");
+        }
+
+        [HttpPost]
+        public ActionResult ChangeIndexQuote(string text)
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            sc.IndexQuote = text;
+            db.SaveChanges();
+
+            return RedirectToAction("ChangeContent");
+        }
+
+        [HttpPost]
+        public ActionResult ChangeContactsAvatarPhoto(SystemContent content)
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            sc.ContactsAvatarPhoto = content.ContactsAvatarPhoto;
+            db.SaveChanges();
+
+            return RedirectToAction("ChangeContent");
+        }
+
+        [HttpPost]
+        public ActionResult ChangeContactsCoverPhoto(byte[] photoFile)
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            sc.ContactsCoverPhoto = photoFile;
+            db.SaveChanges();
+
+            return RedirectToAction("ChangeContent");
+        }
 
         [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage(int id)
