@@ -248,21 +248,45 @@ namespace IlyaSnigirPhotographer.Controllers
         }
 
         [HttpPost]
-        public ActionResult ChangeContactsAvatarPhoto(SystemContent content)
+        public ActionResult ChangeContactsAvatarPhoto(HttpPostedFileBase Image)
         {
-            SystemContent sc = db.SystemContents.FirstOrDefault();
-            sc.ContactsAvatarPhoto = content.ContactsAvatarPhoto;
-            db.SaveChanges();
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("ChangeContent");
+            }
+            else
+            {
+                if (Image != null)
+                {
+                    SystemContent sc = db.SystemContents.FirstOrDefault();
+                    sc.ContactsAvatarPhoto = new byte[Image.ContentLength];
+                    Image.InputStream.Read(sc.ContactsAvatarPhoto, 0, Image.ContentLength);
+                    db.SaveChanges();
+                }
+
+            }
 
             return RedirectToAction("ChangeContent");
         }
 
         [HttpPost]
-        public ActionResult ChangeContactsCoverPhoto(byte[] photoFile)
+        public ActionResult ChangeContactsCoverPhoto(HttpPostedFileBase Image)
         {
-            SystemContent sc = db.SystemContents.FirstOrDefault();
-            sc.ContactsCoverPhoto = photoFile;
-            db.SaveChanges();
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("ChangeContent");
+            }
+            else
+            {
+                if (Image != null)
+                {
+                    SystemContent sc = db.SystemContents.FirstOrDefault();
+                    sc.ContactsCoverPhoto = new byte[Image.ContentLength];
+                    Image.InputStream.Read(sc.ContactsCoverPhoto, 0, Image.ContentLength);
+                    db.SaveChanges();
+                }
+
+            }
 
             return RedirectToAction("ChangeContent");
         }

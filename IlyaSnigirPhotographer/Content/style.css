@@ -1339,3 +1339,16 @@ footer > p {
     transition: 0.3s;
     cursor: pointer;
 }
+
+.sys-content-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+/*.sys-content-item {
+    display: flex;
+}*/
+
+.sys-content-item > img{
+    max-width: 500px;
+}
