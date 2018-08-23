@@ -32,12 +32,24 @@
     <h3 class="wow slideInUp" data-wow-duration="2s" data-wow-offset="250">Фотограф Киев</h3>
 </div>
 <div id="photographer_info">
-    <div class="portret"><img class="wow slideInLeft" data-wow-duration="2s" data-wow-offset="200" src="~/Content/IMG_794711.jpg"></div>
+    <div class="portret"><img class="wow slideInLeft" data-wow-duration="2s" data-wow-offset="200" src="@Url.Action("GetIndexAvatarPhoto", "Home")"></div>
     <article>
         <p class="wow slideInRight" data-wow-duration="2s" data-wow-offset="200"><i class="fas fa-quote-left"></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu. Etiam vehicula quam sed leo posuere, ut vehicula leo bibendum. Phasellus tempor vitae magna id ornare. Donec ac lorem ut diam convallis pharetra. Praesent aliquam nulla hendrerit dolor posuere faucibus. Pellentesque sit amet malesuada justo. Nulla ullamcorper lacinia nunc in blandit. Pellentesque ut pharetra tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
     </article>
 </div>
+<script>
+    $.ajax({
+        url: '@Url.Action("GetIndexAvatarPhoto", "Home")',
+        contentType: 'application/json; charset=utf-8',
+        datatype: 'json',        
+        type: "GET",
+        success: function (data, status, jqXHR) {
+            
 
+            //$(".portret > img").attr("src", data);
+        }
+    });
+</script>
 <div class="inspiration">
     <div class="album">
         <div class="album-item">

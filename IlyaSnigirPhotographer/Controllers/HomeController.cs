@@ -83,6 +83,14 @@ namespace IlyaSnigirPhotographer.Controllers
             }
         }
 
+        public ActionResult GetIndexAvatarPhoto()
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            byte[] img = sc.IndexAvatarPhoto;
+            return File(img, "image/jpg");
+            
+        }
+
         public ActionResult Display(int id)
         {
             Photo photo = db.Photos.Find(id);
