@@ -1332,15 +1332,28 @@ footer > p {
 }
 
 .sys-content-wrap {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-/*.sys-content-item {
+.sys-content-item {
     display: flex;
-}*/
+    justify-content: space-between;
+    padding: 30px;
+    border: solid;
+    border-radius: 50px;
+}
 
-.sys-content-item > img{
-    max-width: 500px;
+
+.sys-form {
+    flex-basis: 1;
+}
+
+.sys-content {
+    width: 600px;
+}
+
+.sys-content > img {
+    width: 100%;
 }

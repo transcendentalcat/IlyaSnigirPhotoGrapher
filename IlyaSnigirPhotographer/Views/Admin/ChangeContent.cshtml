@@ -1,117 +1,130 @@
 ﻿@model IlyaSnigirPhotographer.Models.SystemContent
 
-<h4>SystemContent</h4>
+<h1>Редактировать содержимое </h1>
 <div class="sys-content-wrap">
+    <h2>Фотография на главной</h2>
     <div class="sys-content-item">
-        @using (Html.BeginForm("ChangeIndexAvatarPhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
+        <div class="sys-form">
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.IndexAvatarPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <span>
-                    <input type="file" name="Image" class="btn" />
-                </span>
-                @Html.ValidationMessageFor(model => model.IndexAvatarPhoto, "", new { @class = "text-danger" })
-            </div>
+            @using (Html.BeginForm("ChangeIndexAvatarPhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <span>
+                            <input type="file" name="Image" class="btn" />
+                        </span>
+                        @Html.ValidationMessageFor(model => model.IndexAvatarPhoto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </div>
+            }
         </div>
+        <div class="sys-content">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+            @if (Model.IndexAvatarPhoto != null)
+            {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.IndexAvatarPhoto) + "\" />")}
         </div>
-}
+    </div>
+    <h2>Цитата на главной</h2>
+    <div class="sys-content-item">
+        <div class="sys-form">
 
-        @if (Model.IndexAvatarPhoto != null) {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.IndexAvatarPhoto) + "\" />")}
+            @using (Html.BeginForm("ChangeIndexQuote", "Admin", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextArea("text", null, 5, 100, null)
+                        @Html.ValidationMessageFor(model => model.IndexQuote, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="sys-content">
+            @Model.IndexQuote
+        </div>
 
     </div>
+
+    <h2>Фотография в контактах</h2>
+
     <div class="sys-content-item">
-    @using (Html.BeginForm("ChangeIndexQuote", "Admin", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
+        <div class="sys-form">
+            @using (Html.BeginForm("ChangeContactsAvatarPhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
 
-        <hr/>
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        <div class="form-group">
-            @Html.LabelFor(model => model.IndexQuote, htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.TextArea("text", null, 5, 100, null)
-                @Html.ValidationMessageFor(model => model.IndexQuote, "", new {@class = "text-danger"})
-            </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <span>
+                            <input type="file" name="Image" class="btn" />
+                        </span>
+                        @Html.ValidationMessageFor(model => model.ContactsAvatarPhoto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </div>
+            }
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default"/>
-            </div>
+        <div class="sys-content">
+            @if (Model.ContactsAvatarPhoto != null)
+            {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ContactsAvatarPhoto) + "\" />")
+        }
         </div>
-    }
-
-    <div>
-        @Model.IndexQuote
     </div>
+    <h2>Фотография обложки в контактах</h2>
 
-    </div>
     <div class="sys-content-item">
+        <div class="sys-form">
 
-    @using (Html.BeginForm("ChangeContactsAvatarPhoto", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
-    {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm("ChangeContactsCoverPhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
 
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        <div class="form-group">
-            @Html.LabelFor(model => model.ContactsAvatarPhoto, htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                <span>
-                    <input type="file" name="Image" class="btn btn-default"/>
-                </span>
-                @Html.ValidationMessageFor(model => model.ContactsAvatarPhoto, "", new {@class = "text-danger"})
-            </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <span>
+                            <input type="file" name="Image" class="btn" />
+                        </span>
+                        @Html.ValidationMessageFor(model => model.ContactsCoverPhoto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </div>
+            }
         </div>
+        <div class="sys-content">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default"/>
-            </div>
+            @if (Model.ContactsCoverPhoto != null)
+            {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ContactsCoverPhoto) + "\" />")
+        }
         </div>
-    }
-
-    @if (Model.ContactsAvatarPhoto != null)
-    {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ContactsAvatarPhoto) + "\" />")
-    }
-
-    </div>
-    <div class="sys-content-item">
-
-    @using (Html.BeginForm("ChangeContactsCoverPhoto", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
-    {
-        @Html.AntiForgeryToken()
-
-        <hr/>
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        <div class="form-group">
-            @Html.LabelFor(model => model.ContactsCoverPhoto, htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                <span>
-                    <input type="file" name="Image" class="btn"/>
-                </span>
-                @Html.ValidationMessageFor(model => model.ContactsCoverPhoto, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default"/>
-            </div>
-        </div>
-    }
-
-    @if (Model.ContactsCoverPhoto != null)
-    {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ContactsCoverPhoto) + "\" />")
-    }
     </div>
 </div>
 
