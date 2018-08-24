@@ -28,13 +28,13 @@ namespace IlyaSnigirPhotographer.Controllers
             var albums = db.Albums;
             if(albums != null)
             {
-                foreach (var album in albums)
-                {
-                    if (album.CoverPhoto == null && album.Photos.Count != 0)
-                    {
-                        album.CoverPhoto = album.Photos.FirstOrDefault().PhotoID;                       
-                    }
-                }
+                //foreach (var album in albums)
+                //{
+                //    if (album.CoverPhoto == null && album.Photos.Count != 0)
+                //    {
+                //        album.CoverPhoto = album.Photos.FirstOrDefault().PhotoID;                       
+                //    }
+                //}
                 return View(albums);
             }
             

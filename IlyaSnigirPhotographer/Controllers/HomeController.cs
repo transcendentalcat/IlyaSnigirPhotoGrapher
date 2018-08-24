@@ -34,6 +34,10 @@ namespace IlyaSnigirPhotographer.Controllers
         public ActionResult Portfolio()
         {
             var albums = db.Albums;
+            if(albums == null)
+            {
+                return View("AlbumsNotFound");
+            }
             //var firstPhotos = albums.Select(a => new {a.AlbumID, a.Photos.FirstOrDefault().PhotoID});
             //var albumsWithCover = albums.Where(a => a.CoverPhoto == null).Select()
             //foreach (var album in albums)

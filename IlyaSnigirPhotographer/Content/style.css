@@ -569,7 +569,6 @@ h1.gen-title {
 .album {
 	margin: .5vw;
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
 	flex-flow: row wrap;
 }
@@ -590,10 +589,6 @@ h1.gen-title {
 	height: auto;
 	transition-property: opacity scale;
 	transition-duration: .5s;
-}
-
-.album .album-item img:hover {
-	
 }
 
 @media screen and (max-width: 400px) {
@@ -681,19 +676,19 @@ h1.gen-title {
 
 .gallery_item {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .gallery_album {
-    /*width: calc(50vw - 2vw);*/
-    flex-grow: 1;
+    width: calc(50vw - 2vw);
     height: calc((width - 2vw) / 1.5);
     margin: 5px;
     background-repeat: no-repeat;
     background-position: center center;
     background-origin: border-box;
     background-size: cover;
+    background-color: #383838;
     box-sizing: border-box;
 }
 
@@ -737,27 +732,17 @@ h1.gen-title {
 	transition: .5s;
 }
 
-#img1 {
-	background-image: url("1.jpg");
-}
-
-#img2 {
-	background-image: url("2.jpg");
-}
-
-#img3 {
-	background-image: url("3.jpg");
-}
-
-#img4 {
-	background-image: url("4.jpg");
-}
 
 @media screen and (max-width: 500px) {
     .gallery_album .name {
         font-size: 20px;
         opacity: 1;
     }
+
+    .gallery_album {
+        flex-grow: 1;
+    }
+
 }
 
 /* Контакты и социальные сети*/

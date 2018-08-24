@@ -24,7 +24,12 @@ namespace IlyaSnigirPhotographer.Controllers
                 return PartialView("_Photos", GetPaginatedPhotos(albumId, page));
             }
 
-            return View("Index", db.Photos.Where(p => p.AlbumID == albumId).Take(recordsPerPage));
+            var photos = db.Photos.Where(p => p.AlbumID == albumId).Take(recordsPerPage);
+            if(photos.Count() == 0)
+            {
+                return View("PhotosNotFound");
+            }
+            return View("Index", photos);
         }
 
         public ActionResult Product(int? id, int albumId)

@@ -374,6 +374,8 @@
     <Content Include="Views\Admin\CreateAlbum.cshtml" />
     <Content Include="Views\Admin\EditAlbum.cshtml" />
     <Content Include="Views\Admin\ChangeContent.cshtml" />
+    <Content Include="Views\Photo\PhotosNotFound.cshtml" />
+    <Content Include="Views\Home\AlbumsNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
