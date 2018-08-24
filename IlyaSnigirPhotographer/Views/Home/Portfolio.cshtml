@@ -47,5 +47,15 @@
     <i class="fas fa-arrow-circle-up"></i>
 </div>
 
+<script>
+    function calcHeigth() {
+        var width = $(".gallery_album").width();
+        var heigth = width / 1.5;
+        $(".gallery_album").css("height", width / 1.5);
+    };
+    $(document).ready(calcHeigth);
+    window.addEventListener("resize", calcHeigth);
 
+    
+</script>
 

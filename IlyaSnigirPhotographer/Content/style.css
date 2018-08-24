@@ -682,19 +682,19 @@ h1.gen-title {
 .gallery_item {
 	display: flex;
 	justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .gallery_album {
-	
-	width: calc(50vw - 2vw);
-	height: calc((50vw - 2vw) / 1.5);
-	margin: 5px;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-origin: border-box;
-	background-size: cover;
-	box-sizing: border-box;
-	transition: 1s;
+    /*width: calc(50vw - 2vw);*/
+    flex-grow: 1;
+    height: calc((width - 2vw) / 1.5);
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: border-box;
+    background-size: cover;
+    box-sizing: border-box;
 }
 
 .gallery_album .name {
@@ -751,6 +751,13 @@ h1.gen-title {
 
 #img4 {
 	background-image: url("4.jpg");
+}
+
+@media screen and (max-width: 500px) {
+    .gallery_album .name {
+        font-size: 20px;
+        opacity: 1;
+    }
 }
 
 /* Контакты и социальные сети*/
