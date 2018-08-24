@@ -91,6 +91,28 @@ namespace IlyaSnigirPhotographer.Controllers
             
         }
 
+        public string GetIndexQuote()
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            string quote = sc.IndexQuote;
+            return quote;
+
+        }
+
+        public ActionResult GetContactsAvatarPhoto()
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            byte[] img = sc.ContactsAvatarPhoto;
+            return File(img, "image/jpg");
+        }
+
+        public ActionResult GetContactsCoverPhoto()
+        {
+            SystemContent sc = db.SystemContents.FirstOrDefault();
+            byte[] img = sc.ContactsCoverPhoto;
+            return File(img, "image/jpg");
+        }
+        
         public ActionResult Display(int id)
         {
             Photo photo = db.Photos.Find(id);

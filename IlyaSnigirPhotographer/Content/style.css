@@ -395,7 +395,7 @@ h1.gen-title {
 	margin: 2vh;
 }
 
-#photographer_info article p {
+#photographer_info article .main-quote-wrap {
 	max-width: 400px;
 }
 
@@ -964,8 +964,7 @@ h1.gen-title {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-origin: border-box;
-	background-size: cover;
-	background-image: url("Images/IMG_834912.jpg");
+	background-size: cover;	
 }
 
 .contact-cover img {

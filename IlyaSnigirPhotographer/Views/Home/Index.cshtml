@@ -34,20 +34,24 @@
 <div id="photographer_info">
     <div class="portret"><img class="wow slideInLeft" data-wow-duration="2s" data-wow-offset="200" src="@Url.Action("GetIndexAvatarPhoto", "Home")"></div>
     <article>
-        <p class="wow slideInRight" data-wow-duration="2s" data-wow-offset="200"><i class="fas fa-quote-left"></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu. Etiam vehicula quam sed leo posuere, ut vehicula leo bibendum. Phasellus tempor vitae magna id ornare. Donec ac lorem ut diam convallis pharetra. Praesent aliquam nulla hendrerit dolor posuere faucibus. Pellentesque sit amet malesuada justo. Nulla ullamcorper lacinia nunc in blandit. Pellentesque ut pharetra tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <div class="main-quote-wrap wow slideInRight" data-wow-duration="2s" data-wow-offset="200"><i class="fas fa-quote-left"></i><br><div class="main-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu. Etiam vehicula quam sed leo posuere, ut vehicula leo bibendum. Phasellus tempor vitae magna id ornare. Donec ac lorem ut diam convallis pharetra. Praesent aliquam nulla hendrerit dolor posuere faucibus. Pellentesque sit amet malesuada justo. Nulla ullamcorper lacinia nunc in blandit. Pellentesque ut pharetra tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div></div>
     </article>
 </div>
 <script>
     $.ajax({
-        url: '@Url.Action("GetIndexAvatarPhoto", "Home")',
+        url: '@Url.Action("GetIndexQuote", "Home")',
         contentType: 'application/json; charset=utf-8',
-        datatype: 'json',        
+        datatype: 'json',
         type: "GET",
         success: function (data, status, jqXHR) {
-            
+
 
             //$(".portret > img").attr("src", data);
         }
+    });
+
+    $(function () {
+        $('.main-quote').load('@Url.Action("GetIndexQuote", "Home")');
     });
 </script>
 <div class="inspiration">

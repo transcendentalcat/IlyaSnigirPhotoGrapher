@@ -4,28 +4,28 @@
 <div class="sys-content-wrap">
     <div class="sys-content-item">
         @using (Html.BeginForm("ChangeIndexAvatarPhoto", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            @Html.AntiForgeryToken()
+    {
+        @Html.AntiForgeryToken()
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.IndexAvatarPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <span>
-                        <input type="file" name="Image" class="btn" />
-                    </span>
-                    @Html.ValidationMessageFor(model => model.IndexAvatarPhoto, "", new { @class = "text-danger" })
-                </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.IndexAvatarPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <span>
+                    <input type="file" name="Image" class="btn" />
+                </span>
+                @Html.ValidationMessageFor(model => model.IndexAvatarPhoto, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
-        }
+        </div>
+}
 
-        @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.IndexAvatarPhoto) + "\" />")
+        @if (Model.IndexAvatarPhoto != null) {@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.IndexAvatarPhoto) + "\" />")}
 
     </div>
     <div class="sys-content-item">

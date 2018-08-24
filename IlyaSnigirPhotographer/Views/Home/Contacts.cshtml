@@ -3,8 +3,8 @@
     Layout = "~/Views/Shared/_PhotoLayout.cshtml";
 }
 
-<div class="contact-cover">
-    <img src="~/Content/IMG_1068.JPG">
+<div class="contact-cover" style="background-image: url(@Url.Action("GetContactsCoverPhoto", "Home"))">
+    <img src="@Url.Action("GetContactsAvatarPhoto", "Home")">
 </div>
 
 <div class="contacts">
@@ -28,7 +28,7 @@
         <div class="social">
             <ul>
                 <li><i class="fab fa-facebook-f" aria-hidden="true"></i></li>
-                <li><i class="fab fa-instagram" aria-hidden="true"></i></li>
+                <li><a href="https://www.instagram.com/ilyasnigir/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                 <li><i class="fab fa-vk"></i></li>
             </ul>
         </div>
