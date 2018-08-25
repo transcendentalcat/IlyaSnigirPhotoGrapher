@@ -571,13 +571,19 @@ h1.gen-title {
 	display: flex;
 	flex-wrap: wrap;
 	flex-flow: row wrap;
+    align-items: center;
 }
 
-.album .album-item {
-	flex: auto;
-	width: 400px;
-	margin: .5vw;
-}
+    .album .album-item {
+        flex: auto;
+        width: 400px;
+        height: 300px;
+        margin: .5vw;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-origin: border-box;
+        background-size: cover;
+    }
 
 .inspiration .album .quote {
 	box-sizing: border-box;
@@ -1339,10 +1345,13 @@ footer > p {
 
 .sys-content-item {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     padding: 30px;
     border: solid;
     border-radius: 50px;
+    font-size: 20px;
 }
 
 

@@ -51,7 +51,8 @@ namespace IlyaSnigirPhotographer.Controllers
             return db.Photos.Where(p => p.AlbumID == albumId)
                 .OrderBy(x => x.CreatedDate)
                 .Skip(skipRecords)
-                .Take(recordsPerPage).ToList();
+                .Take(recordsPerPage)               
+                .ToList();
         }
     }
 }

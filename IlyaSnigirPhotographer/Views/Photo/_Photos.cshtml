@@ -5,8 +5,8 @@
     {
         if (item.PhotoFile != null)
         {
-            <div class="album-item anim">               
-                @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(item.PhotoFile) + "\" />")
+            <div class="album-item anim" style="background-image: url(@Url.Action("GetImage", "Home", new { id = item.PhotoID }))">               
+                @*@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(item.PhotoFile) + "\" />")*@
             </div>
         }
     }
