@@ -77,29 +77,35 @@
 <script>
     var allImages;
     var currIndex;
+    var nextImage;
+    var prevImage;
+
     $(document).ready(function () {
         $(document).on("click", ".album > .album-item", function () {
             allImages = document.querySelectorAll(".album .album-item"); 
             cur_img_url = $(this).css('background-image');
             cur_img = cur_img_url.slice(5, -2);
             for (var i = 0; i < allImages.length; ++i) {
-                if (allImages[i].getAttribute('src') == cur_img)
+                if ($(allImages[i]).css('background-image').slice(5, -2) == cur_img) { 
                     currIndex = i;
+                };  
             };
             $(".lightbox").css("display", "block");
             $("img.slide_lightbox").attr('src', cur_img);
 
-            $(".next-l").on("click", function () {
+            $(".next-l").off().on("click", function () {
                 if (currIndex !== (allImages.length - 1)) {
                     ++currIndex;
-                    $("img.slide_lightbox").attr('src', allImages[currIndex].style('background-image'));                    
+                    nextImage = $(allImages[currIndex]).css('background-image').slice(5, -2);
+                    $("img.slide_lightbox").attr('src', nextImage);                    
                 }
             });
 
-            $(".prev-l").on("click", function () {
+            $(".prev-l").off().on("click", function () {
                 if (currIndex !== 0) {
                     --currIndex;
-                    $("img.slide_lightbox").attr('src', allImages[currIndex].getAttribute('src'));
+                    prevImage = $(allImages[currIndex]).css('background-image').slice(5, -2);
+                    $("img.slide_lightbox").attr('src', prevImage); 
                 }
             });
         });

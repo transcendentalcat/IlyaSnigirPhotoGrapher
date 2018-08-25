@@ -577,7 +577,7 @@ h1.gen-title {
     .album .album-item {
         flex: auto;
         width: 400px;
-        height: 300px;
+        height: 400px;
         margin: .5vw;
         background-repeat: no-repeat;
         background-position: center center;
@@ -625,7 +625,7 @@ h1.gen-title {
 .close {
     position: absolute;
     right: -60px;
-    top: -60px;
+    top: 0px;
     font-size: 48px;
     height: 10%;
     height: 48px;
