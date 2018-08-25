@@ -403,22 +403,22 @@ h1.gen-title {
 	font-size: 46px;
 }
 
-.inspiration .album .album-item{
-	margin: 0;
-	width: 270px;
+.inspiration .inspiration-wrap .inspiration-item {
+    margin: 0;
+    width: 270px;
 }
 
 .inspiration {
 	background-color: #383838;
 	margin: 10vh 0;
 }
- 
-.inspiration .album .quote p {
-	font-size: 26px;
-	text-align: right;
-	color: #fff;
-	font-family: 'Poiret One', cursive;
-}
+
+    .inspiration .inspiration-wrap .quote p {
+        font-size: 26px;
+        text-align: right;
+        color: #fff;
+        font-family: 'Poiret One', cursive;
+    }
 
 /* Услуги на главной*/
 
@@ -574,27 +574,40 @@ h1.gen-title {
     align-items: center;
 }
 
-    .album .album-item {
+.album .album-item {
+    flex: auto;
+    width: 400px;
+    height: 400px;
+    margin: .5vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.inspiration .inspiration-wrap {
+    margin: .5vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+}
+
+    .inspiration .inspiration-wrap .inspiration-item {
         flex: auto;
-        width: 400px;
-        height: 400px;
-        margin: .5vw;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-origin: border-box;
-        background-size: cover;
+        width: 270px;
+        height: auto;
     }
 
-.inspiration .album .quote {
-	box-sizing: border-box;
-	padding: 3vh;
-	width: 400px;
+.inspiration .inspiration-wrap .quote {
+    box-sizing: border-box;
+    padding: 3vh;
+    width: 400px;
 }
-.album .album-item img, p {
-	width: 100%;
-	height: auto;
-	transition-property: opacity scale;
-	transition-duration: .5s;
+.inspiration-wrap .inspiration-item img, p {
+    width: 100%;
+    height: auto;
+    transition-property: opacity scale;
+    transition-duration: .5s;
 }
 
 @media screen and (max-width: 400px) {

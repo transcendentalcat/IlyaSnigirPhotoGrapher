@@ -37,43 +37,31 @@
         <div class="main-quote-wrap wow slideInRight" data-wow-duration="2s" data-wow-offset="200"><i class="fas fa-quote-left"></i><br><div class="main-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu. Etiam vehicula quam sed leo posuere, ut vehicula leo bibendum. Phasellus tempor vitae magna id ornare. Donec ac lorem ut diam convallis pharetra. Praesent aliquam nulla hendrerit dolor posuere faucibus. Pellentesque sit amet malesuada justo. Nulla ullamcorper lacinia nunc in blandit. Pellentesque ut pharetra tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div></div>
     </article>
 </div>
-<script>
-    $.ajax({
-        url: '@Url.Action("GetIndexQuote", "Home")',
-        contentType: 'application/json; charset=utf-8',
-        datatype: 'json',
-        type: "GET",
-        success: function (data, status, jqXHR) {
-
-
-            //$(".portret > img").attr("src", data);
-        }
-    });
-
+<script>   
     $(function () {
         $('.main-quote').load('@Url.Action("GetIndexQuote", "Home")');
     });
 </script>
 <div class="inspiration">
-    <div class="album">
-        <div class="album-item">
+    <div class="inspiration-wrap">
+        <div class="inspiration-item">
             <img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/watch.jpg">
         </div>
-        <div class="album-item quote"><p class="wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">Я вижу мир по другому, и каждый день пытаюсь найти что-то прекрасное и поделиться этим с другими</p></div>
-        <div class="album-item">
+        <div class="inspiration-item quote"><p class="wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">Я вижу мир по другому, и каждый день пытаюсь найти что-то прекрасное и поделиться этим с другими</p></div>
+        <div class="inspiration-item">
             <img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/forest1.jpg">
         </div>
-        <div class="album-item">
+        <div class="inspiration-item">
             <img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/rain.jpg">
         </div>
-        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/forest2.jpg"></div>
-        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/фонарик.jpg"></div>
-        <div class="album-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/car.jpg"></div>
-        <div class="album-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="2.1s" src="/Content/Inspiration/forest3.jpg"></div>
-        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/forest5.jpg"></div>
-        <div class="album-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/forest4.jpg"></div>
-        <div class="album-item quote"><p class="wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">Я вижу мир по другому, и каждый день пытаюсь найти что-то прекрасное и поделиться этим с другими</p></div>
-        <div class="album-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/профиль.jpg"></div>
+        <div class="inspiration-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/forest2.jpg"></div>
+        <div class="inspiration-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/фонарик.jpg"></div>
+        <div class="inspiration-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/car.jpg"></div>
+        <div class="inspiration-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="2.1s" src="/Content/Inspiration/forest3.jpg"></div>
+        <div class="inspiration-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" src="/Content/Inspiration/forest5.jpg"></div>
+        <div class="inspiration-item"><img class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="0.7s" src="/Content/Inspiration/forest4.jpg"></div>
+        <div class="inspiration-item quote"><p class="wow fadeInDown" data-wow-duration="1.5s" data-wow-offset="200">Я вижу мир по другому, и каждый день пытаюсь найти что-то прекрасное и поделиться этим с другими</p></div>
+        <div class="inspiration-item"><img class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="200" data-wow-delay="1.4s" src="/Content/Inspiration/профиль.jpg"></div>
     </div>
 </div>
 
