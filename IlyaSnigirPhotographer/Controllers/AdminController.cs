@@ -291,6 +291,25 @@ namespace IlyaSnigirPhotographer.Controllers
             return RedirectToAction("ChangeContent");
         }
 
+        [HttpGet]
+        public ActionResult EditNews()
+        {
+            Message news = db.Messages.FirstOrDefault();
+            if (news != null)
+            {
+                return View(news);
+            }
+            return HttpNotFound();
+        }
+
+        [HttpPost]
+        public ActionResult EditNews(Message news)
+        {
+            db.Entry(news).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("EditNews");
+        }
+
         [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage(int id)
         {

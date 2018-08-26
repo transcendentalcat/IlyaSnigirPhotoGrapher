@@ -104,12 +104,22 @@ namespace IlyaSnigirPhotographer.Models
         public byte[] ContactsCoverPhoto { get; set; }       
     }
 
+    public class Message
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public string IsShown { get; set; }
+    }
+
     public class PortfolioDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Album> Albums { get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<SystemContent> SystemContents { get; set; }
+        public DbSet<Message> Messages { get; set; }
+
 
         public PortfolioDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -261,8 +271,24 @@ namespace IlyaSnigirPhotographer.Models
             photos.ForEach(s => context.Photos.Add(s));
             context.SaveChanges();
 
-            var sc = new SystemContent();
+            var sc = new SystemContent()
+            {
+                ContactsAvatarPhoto = LoadPhoto("\\Images\\3.jpg"),
+                ContactsCoverPhoto = LoadPhoto("\\Images\\4.jpg"),
+                IndexAvatarPhoto = LoadPhoto("\\Images\\5.jpg"),
+                IndexQuote = "Lorem"
+            };
             context.SystemContents.Add(sc);
+            context.SaveChanges();
+
+            var news = new Message()
+            {
+                Title = "Hello EveryBody", 
+                Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.",
+                IsShown = "true"
+            };
+
+            context.Messages.Add(news);
             context.SaveChanges();
         }
 

@@ -119,6 +119,35 @@ function PopUpHide() {
     $("#popup1").fadeOut();
 }
 
+/*Show pop-up with news*/
+window.onload = function () {
+    console.log("news");
+    var chboxNews;
+    var showNews;
+    chboxNews = document.getElementById('showNews');
+
+    if (chbox.checked) {
+        showNews = true;
+    }
+    else {
+        showNews = false;
+    }
+}
+
+$(function () {
+    if (showNews)
+        $(".news-wrap").fadeIn('slow');
+
+    $(".news-wrap").click(NewsHide);
+});
+
+function NewsHide() {
+    $(".news-wrap").fadeOut('slow');
+}
+
+
+
+
 /*$(window).on('scroll', function(){
 	if($(window).scrollTop()) {
 		$('nav').addClass('black');

@@ -7,12 +7,14 @@
 <div class="slider-wrapper">
     <div id="slider" class="slider">
         <div class="news-wrap">
-            <div class="news">
-                <h1>Some news</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
-                <div class="close-news">&times;</div>
+            <div class="news-wrap-display">
+                <div class="news">
+                    <h1>Some news</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
+                    <div class="close-news">&times;</div>
+                </div>
+          </div>
             </div>
-        </div>
             <div id="photo">
                 <div class="img img1 showed"></div>
                 <div class="img img2"></div>
@@ -51,14 +53,14 @@
         $('.main-quote').load('@Url.Action("GetIndexQuote", "Home")');
     });
 
-        $(function(){
-            $(".news-wrap").fadeIn('slow');
-            $(".news-wrap").click(NewsHide);
-        });
+    //$(function(){
+    //    //$(".news-wrap").fadeIn('slow');
+    //    $(".news-wrap").click(NewsHide);
+    //});
 
-        function NewsHide() {
-            $(".news-wrap").fadeOut('slow');
-        }
+    //function NewsHide() {
+    //    $(".news-wrap").fadeOut('slow');
+    //}
 
 </script>
 <div class="inspiration">
