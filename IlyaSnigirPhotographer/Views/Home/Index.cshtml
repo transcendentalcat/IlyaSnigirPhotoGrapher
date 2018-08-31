@@ -9,7 +9,7 @@
         <div class="news-wrap">
             <div class="news-wrap-display">
                 <div class="news">
-                    <h1>Some news</h1>
+                    <h1></h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.</p>
                     <div class="close-news">&times;</div>
                 </div>
@@ -53,14 +53,38 @@
         $('.main-quote').load('@Url.Action("GetIndexQuote", "Home")');
     });
 
-    //$(function(){
-    //    //$(".news-wrap").fadeIn('slow');
-    //    $(".news-wrap").click(NewsHide);
-    //});
+    $(function () {
+        console.log("Жизнь удалась1");
 
-    //function NewsHide() {
-    //    $(".news-wrap").fadeOut('slow');
-    //}
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetNews", "Admin")',
+
+            success: function (result) {           
+                $(".news > h1").html(result.Title);
+                $(".news > p").html(result.Body);
+
+                var isShown = result.IsShown;
+                console.log(isShown);
+
+                if (isShown) {
+                    $(".news-wrap").fadeIn('slow');
+                }
+            },
+
+            error: function(response) {
+                alert("Error");
+            }
+        });
+    });
+
+    $(function(){
+        $(".news-wrap").click(NewsHide);
+    });
+
+    function NewsHide() {
+        $(".news-wrap").fadeOut('slow');
+    }
 
 </script>
 <div class="inspiration">

@@ -197,6 +197,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808311031161_InitialCreate.cs" />
+    <Compile Include="Migrations\201808311031161_InitialCreate.Designer.cs">
+      <DependentUpon>201808311031161_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808311157084_IsShownBool.cs" />
+    <Compile Include="Migrations\201808311157084_IsShownBool.Designer.cs">
+      <DependentUpon>201808311157084_IsShownBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -386,6 +395,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808311031161_InitialCreate.resx">
+      <DependentUpon>201808311031161_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311157084_IsShownBool.resx">
+      <DependentUpon>201808311157084_IsShownBool.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

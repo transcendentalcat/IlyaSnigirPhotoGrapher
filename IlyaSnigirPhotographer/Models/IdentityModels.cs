@@ -109,7 +109,7 @@ namespace IlyaSnigirPhotographer.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-        public string IsShown { get; set; }
+        public bool IsShown { get; set; }
     }
 
     public class PortfolioDbContext : IdentityDbContext<ApplicationUser>
@@ -285,7 +285,7 @@ namespace IlyaSnigirPhotographer.Models
             {
                 Title = "Hello EveryBody", 
                 Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis velit a gravida fermentum. Nam metus risus, pharetra sed ligula ac, mattis laoreet arcu.",
-                IsShown = "true"
+                IsShown = true
             };
 
             context.Messages.Add(news);

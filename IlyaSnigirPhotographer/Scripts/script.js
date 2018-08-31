@@ -120,19 +120,7 @@ function PopUpHide() {
 }
 
 /*Show pop-up with news*/
-window.onload = function () {
-    console.log("news");
-    var chboxNews;
-    var showNews;
-    chboxNews = document.getElementById('showNews');
 
-    if (chbox.checked) {
-        showNews = true;
-    }
-    else {
-        showNews = false;
-    }
-}
 
 $(function () {
     if (showNews)

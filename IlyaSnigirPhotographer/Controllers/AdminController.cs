@@ -303,11 +303,18 @@ namespace IlyaSnigirPhotographer.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditNews(Message news)
+        public ActionResult EditNews(Message news, bool IsShown)
         {
+            news.IsShown = IsShown;
             db.Entry(news).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("EditNews");
+        }
+
+        public JsonResult GetNews()
+        {
+            Message news = db.Messages.FirstOrDefault();           
+                return Json(news, JsonRequestBehavior.AllowGet);         
         }
 
         [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
