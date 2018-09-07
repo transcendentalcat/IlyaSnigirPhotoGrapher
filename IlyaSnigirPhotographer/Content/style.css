@@ -421,7 +421,7 @@ h1.gen-title {
 #photographer_info {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	box-sizing: border-box;
 	margin: 2vh 2vh 15vh 0;
@@ -432,7 +432,6 @@ h1.gen-title {
 	text-align: center;
 	margin: 2vh;
 	margin-left: 0;
-	margin-right: auto;
 }
 
 #photographer_info .portret img {
@@ -468,6 +467,15 @@ h1.gen-title {
         font-family: 'Poiret One', cursive;
     }
 
+@media screen and (max-width: 1300px) {
+    .photographer_info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 /* Услуги на главной*/
 
 .services_title {
