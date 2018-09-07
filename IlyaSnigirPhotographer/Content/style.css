@@ -856,14 +856,6 @@ h1.gen-title {
 	align-items: center;
 }
 
-.social {
-	//background: rgba(38, 38, 38, 1) ; !important;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	position: relative;
-	
-}
 
 .phone {
 	box-sizing: border-box;
@@ -927,19 +919,32 @@ h1.gen-title {
 }
 
 .social {
+    //background: rgba(38, 38, 38, 1) ; !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
 	margin-top: 40px;
 }
 
-.social ul {
+
+.social .ul {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	/*top: 50%;
+	left: 50%;*/
+	/*transform: translate(-50%, -50%);*/
 }
 
-.social ul li {
+@media screen and (max-width: 515px) {
+    .social .ul {
+        display: flex; 
+        flex-direction: column;
+    }
+}
+
+.social .ul .li {
 	list-style: none;
 	float: left;
 	margin: 10px;
@@ -959,13 +964,13 @@ h1.gen-title {
 	transition: .5s ease-in-out;
 }
 
-.home_contact .social ul li {
+.home_contact .social .ul .li {
 	color: #fff;
 	background: rgba(0, 0, 0, 0);
 	border-color: #fff;
 }
 
-.social ul li:before {
+.social .ul .li:before {
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -979,7 +984,7 @@ h1.gen-title {
 	transition: .3s ease-in-out;
 }
 
-.social ul li:after {
+.social .ul .li:after {
 	content: '';
 	width: 50%;
 	height: 100%;
@@ -991,32 +996,32 @@ h1.gen-title {
 	transition-delay: .2s
 }
 
-.social ul li:hover:before {
+.social .ul .li:hover:before {
 	left: 0;
 	transform: scale(.9);
 }
 
-.social ul li:hover:after {
+.social .ul .li:hover:after {
 	right: 0;
 
 }
 
-.social ul li:nth-child(1):before {
+.social .ul .li:nth-child(1):before {
 	background: #3b5999;
 }
 
-.social ul li:nth-child(2):before {
+.social .ul .li:nth-child(2):before {
 	background: #e4405f;
 }
 
-.social ul li:nth-child(3):before {
+.social .ul .li:nth-child(3):before {
     background: #45668e;
 }
-.social ul li .fab {
+.social .ul .li .fab {
     transition: .3s ease-in-out;
 }
 
-.social ul li:hover .fab {
+.social .ul .li:hover .fab {
 	color: #fff;
 }
 
